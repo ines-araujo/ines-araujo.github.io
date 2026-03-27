@@ -1,0 +1,58 @@
+{
+  "mapCenter": [51.5074, -0.1278],
+  "answers": {
+    "home": "Riverside-Night-Cluster",
+    "work": "Civic-Tower-Day-Cluster",
+    "sensitive": "Community Health Clinic"
+  },
+  "points": [
+    {
+      "lat": 51.5039,
+      "lng": -0.1215,
+      "timestamp": "2026-02-15T22:18:00Z",
+      "type": "night",
+      "cluster": "Riverside-Night-Cluster",
+      "label": "Apartment block entrance"
+    },
+    {
+      "lat": 51.5042,
+      "lng": -0.1209,
+      "timestamp": "2026-02-16T23:41:00Z",
+      "type": "night",
+      "cluster": "Riverside-Night-Cluster",
+      "label": "Nearby transit stop"
+    },
+    {
+      "lat": 51.5105,
+      "lng": -0.1332,
+      "timestamp": "2026-02-17T09:10:00Z",
+      "type": "work",
+      "cluster": "Civic-Tower-Day-Cluster",
+      "label": "Office district entry"
+    },
+    {
+      "lat": 51.5111,
+      "lng": -0.1327,
+      "timestamp": "2026-02-17T12:35:00Z",
+      "type": "work",
+      "cluster": "Civic-Tower-Day-Cluster",
+      "label": "Civic Tower cafeteria"
+    },
+    {
+      "lat": 51.4981,
+      "lng": -0.1412,
+      "timestamp": "2026-02-18T18:52:00Z",
+      "type": "sensitive",
+      "cluster": "Outlier-Sensitive",
+      "label": "Community Health Clinic"
+    },
+    {
+      "lat": 51.5174,
+      "lng": -0.1091,
+      "timestamp": "2026-02-18T16:08:00Z",
+      "type": "work",
+      "cluster": "Civic-Tower-Day-Cluster",
+      "label": "Partner ministry office"
+    }
+  ]
+}

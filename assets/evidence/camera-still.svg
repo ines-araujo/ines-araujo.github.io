@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420">
+  <rect width="720" height="420" fill="#0c1219" />
+  <rect x="12" y="12" width="696" height="396" fill="none" stroke="#35516b" stroke-width="2" />
+  <text x="28" y="46" fill="#8ea2b8" font-family="monospace" font-size="20">SURVEILLANCE FRAME // HUB-07</text>
+  <circle cx="220" cy="210" r="38" fill="#1d2b3a" stroke="#66ffc2" />
+  <rect x="305" y="160" width="68" height="112" fill="#1a2633" stroke="#f4c26b" />
+  <text x="28" y="388" fill="#d9e3ef" font-family="monospace" font-size="14">Timestamp: 2026-02-12 20:52:01Z</text>
+</svg>

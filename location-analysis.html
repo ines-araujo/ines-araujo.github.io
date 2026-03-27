@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case File 03 - Location Analysis</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body class="scanline">
+    <main class="container">
+      <div class="topbar">
+        <a class="btn" href="./social-graph.html">Back</a>
+        <div class="tag">CASE FILE 03: MOVEMENT PATTERN</div>
+      </div>
+
+      <section class="panel">
+        <h2>Location Analysis</h2>
+        <p>
+          Use fictional GPS/activity metadata to infer likely home, workplace, and a sensitive meeting site.
+          The dataset includes timestamps and activity labels.
+        </p>
+      </section>
+
+      <section class="grid two">
+        <div class="panel">
+          <div id="map"></div>
+        </div>
+        <div class="panel">
+          <h3>Analyst Tasks</h3>
+          <p class="hint">Night clusters often reveal home. Weekday daytime clusters often reveal work.</p>
+          <div>
+            <label for="homeGuess">Home cluster:</label>
+            <select id="homeGuess"></select>
+          </div>
+          <div>
+            <label for="workGuess">Work cluster:</label>
+            <select id="workGuess"></select>
+          </div>
+          <div>
+            <label for="sensitiveGuess">Sensitive location:</label>
+            <select id="sensitiveGuess"></select>
+          </div>
+          <button id="validateLocationBtn" type="button">Validate Analysis</button>
+          <p id="locationFeedback" class="status"></p>
+          <a id="toDebate" class="btn" href="./debate.html">Proceed to Confrontation</a>
+        </div>
+      </section>
+    </main>
+    <script src="./js/state.js"></script>
+    <script src="./js/location.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+Meeting Minutes (Simulated DOC Artifact)
+
+- Agenda: data retention directives
+- Participants: redacted
+- Action item: unify telemetry export schema
+
+Margin annotation:
+"Cross-check analyst compliance logs weekly."

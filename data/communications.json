@@ -1,0 +1,23 @@
+{
+  "correctInsider": "Mara",
+  "nodes": [
+    { "id": "Mara" },
+    { "id": "Dante" },
+    { "id": "Leena" },
+    { "id": "Kieran" },
+    { "id": "Opal" },
+    { "id": "Rook" },
+    { "id": "Nia" }
+  ],
+  "links": [
+    { "source": "Mara", "target": "Dante", "weight": 9 },
+    { "source": "Mara", "target": "Leena", "weight": 8 },
+    { "source": "Mara", "target": "Kieran", "weight": 7 },
+    { "source": "Mara", "target": "Opal", "weight": 6 },
+    { "source": "Mara", "target": "Rook", "weight": 5 },
+    { "source": "Dante", "target": "Leena", "weight": 2 },
+    { "source": "Leena", "target": "Nia", "weight": 3 },
+    { "source": "Rook", "target": "Nia", "weight": 2 },
+    { "source": "Opal", "target": "Kieran", "weight": 1 }
+  ]
+}

@@ -1,1 +1,93 @@
-Hello World
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE LEAK</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="scanline gate-active">
+    <div
+      id="disclaimerGate"
+      class="access-gate"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="accessNoticeTitle"
+      aria-describedby="accessNoticeText"
+    >
+      <section class="access-panel">
+        <p id="gateInit" class="gate-init"></p>
+        <h2 id="accessNoticeTitle" class="glitch-target">ACCESS NOTICE</h2>
+        <p id="accessNoticeText">
+          This is a fictional educational experience. Characters, agencies, and datasets are synthetic.
+          Repository link: <a href="#" class="muted">[insert GitHub repo URL]</a>
+        </p>
+        <label for="disclaimerCheck" class="gate-check">
+          <input id="disclaimerCheck" type="checkbox" />
+          I understand and wish to proceed
+        </label>
+        <button id="enterSystemBtn" type="button" disabled>ENTER SYSTEM</button>
+        <p class="footer-note">Unauthorized continuation is logged.</p>
+      </section>
+    </div>
+
+    <main id="siteContent" class="container">
+      <div class="topbar">
+        <div class="tag">CLEARANCE: LEVEL 2</div>
+        <div id="monitorHint" class="tag glitch-target">MONITORING: ACTIVE</div>
+      </div>
+
+      <section class="panel">
+        <h1 class="hero-title glitch" data-text="THE LEAK">THE LEAK</h1>
+        <p id="typedIntro" class="typed"></p>
+        <p>
+          You are newly assigned to the Bureau of Signals Intelligence. A data leak has triggered an emergency investigation.
+          Your task is to analyze clues and metadata to identify who exposed classified operations.
+        </p>
+        <p class="muted">
+          Metadata is data about data: who created something, when, where, with which device, and how it moved across systems.
+          Even when content is encrypted or hidden, metadata can still reveal patterns of behavior.
+        </p>
+        <p class="hint">
+          Mission format: interactive investigation files, network analysis, geolocation inference, and a final ethical confrontation.
+        </p>
+        <div class="grid two">
+          <div class="panel">
+            <h3>Learning Goals</h3>
+            <ul>
+              <li>Read and interpret document metadata.</li>
+              <li>Build timelines from timestamps and technical traces.</li>
+              <li>Understand social graph analysis from call/email records.</li>
+              <li>Infer private routines from location points.</li>
+              <li>Debate surveillance ethics and accountability.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Disclaimer</h3>
+            <p>
+              This is a fictional educational experience. Characters, agencies, and datasets are synthetic.
+              Repository link: <a href="#" class="muted">[insert GitHub repo URL]</a>
+            </p>
+            <button id="resetBtn" type="button">Reset Investigation State</button>
+          </div>
+        </div>
+        <p class="footer-note">
+          Internal memo: Exposure risk now includes external actors and internal analysts.
+          <span class="redacted">your workstation is not exempt</span>.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Investigation Navigation</h2>
+        <div id="chapterNav" class="nav-grid"></div>
+        <div style="margin-top: 1rem">
+          <a class="btn" href="./docs-metadata.html">Begin Investigation</a>
+        </div>
+      </section>
+    </main>
+    <script src="./js/state.js"></script>
+    <script src="./js/typing.js"></script>
+    <script src="./js/disclaimer-gate.js"></script>
+    <script src="./js/landing.js"></script>
+  </body>
+</html>

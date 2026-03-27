@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case File 02 - Social Graph</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  </head>
+  <body class="scanline">
+    <main class="container">
+      <div class="topbar">
+        <a class="btn" href="./docs-metadata.html">Back</a>
+        <div class="tag">CASE FILE 02: COMMUNICATION WEB</div>
+      </div>
+
+      <section class="panel">
+        <h2>Phone Patterns &amp; Social Graphs</h2>
+        <p>
+          Analyze communication metadata to identify the insider node. Nodes represent people,
+          edges represent contact frequency.
+        </p>
+        <p class="hint">Drag nodes, click a node for centrality metrics, and track bridge behavior.</p>
+      </section>
+
+      <section class="grid two">
+        <div class="panel">
+          <div id="graph"></div>
+        </div>
+        <div class="panel">
+          <h3>Node Metrics</h3>
+          <div id="nodeMetrics" class="metrics">Select a node to inspect metrics.</div>
+          <h3 style="margin-top: 1rem">Action</h3>
+          <button id="highlightHubBtn" type="button">Highlight Most Connected Nodes</button>
+          <div style="margin-top: 0.8rem">
+            <label for="insiderSelect">Mark insider:</label>
+            <select id="insiderSelect"></select>
+            <button id="confirmInsiderBtn" type="button">Confirm</button>
+          </div>
+          <p id="graphFeedback" class="status"></p>
+          <a id="toLocation" class="btn" href="./location-analysis.html">Proceed to Location Analysis</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/state.js"></script>
+    <script src="./js/social-graph.js"></script>
+  </body>
+</html>

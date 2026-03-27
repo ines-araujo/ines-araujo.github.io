@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case File 01 - Document Metadata</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="scanline">
+    <main class="container">
+      <div class="topbar">
+        <a class="btn" href="./index.html">Back to Briefing</a>
+        <div class="tag">CASE FILE 01: DOCUMENT TRACE</div>
+      </div>
+
+      <section class="panel">
+        <h2>Leaked Files Intake</h2>
+        <p>
+          Review evidence files and metadata extracts. Build a timeline and identify the primary suspect
+          responsible for first contact with the leak endpoint.
+        </p>
+        <div id="evidenceList"></div>
+      </section>
+
+      <section class="grid two">
+        <div class="panel">
+          <h3>Parsed Metadata</h3>
+          <ul id="metadataPanel" class="metadata-list"></ul>
+        </div>
+        <div class="panel">
+          <h3>Timeline Builder</h3>
+          <div id="timeline" class="timeline"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h3>Analyst Decision</h3>
+        <p class="hint">Choose the person whose metadata activity best aligns with the leak sequence.</p>
+        <div id="suspectOptions" class="grid two"></div>
+        <p id="documentFeedback" class="status"></p>
+        <a id="toGraph" class="btn" href="./social-graph.html" aria-disabled="true">Proceed to Communication Graph</a>
+      </section>
+    </main>
+    <script src="./js/state.js"></script>
+    <script src="./js/document-metadata.js"></script>
+  </body>
+</html>

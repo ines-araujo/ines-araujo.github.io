@@ -1,0 +1,63 @@
+{
+  "correctSuspect": "Mara Voss",
+  "suspects": ["Mara Voss", "Dante Ives", "Leena Ro", "Kieran Holt"],
+  "files": [
+    {
+      "id": "f1",
+      "fileName": "policy-brief.pdf",
+      "fileType": "PDF",
+      "link": "./assets/evidence/policy-brief.pdf.txt",
+      "metadata": {
+        "author": "Mara Voss",
+        "createdAt": "2026-02-10T09:14:22Z",
+        "modifiedAt": "2026-02-12T21:54:11Z",
+        "device": "OrionBook-14 / Linux",
+        "location": "North Dock, Sector 3",
+        "ipAsn": "198.51.100.44 / AS64580"
+      },
+      "timeline": [
+        { "time": "09:14", "label": "File created on OrionBook-14" },
+        { "time": "21:54", "label": "Final edit before encrypted transfer" },
+        { "time": "22:03", "label": "Upload attempt to offshore endpoint" }
+      ]
+    },
+    {
+      "id": "f2",
+      "fileName": "camera-still.jpg",
+      "fileType": "Image",
+      "link": "./assets/evidence/camera-still.svg",
+      "metadata": {
+        "author": "Station Cam 07",
+        "createdAt": "2026-02-12T20:52:01Z",
+        "modifiedAt": "2026-02-12T20:52:01Z",
+        "device": "OptiEye C7",
+        "location": "Transit Hub",
+        "ipAsn": "203.0.113.12 / AS64581"
+      },
+      "timeline": [
+        { "time": "20:52", "label": "Still frame captured at transit gate" },
+        { "time": "21:01", "label": "Image copied into analyst archive" },
+        { "time": "22:20", "label": "Forwarded to anonymous relay" }
+      ]
+    },
+    {
+      "id": "f3",
+      "fileName": "minutes.doc",
+      "fileType": "Document",
+      "link": "./assets/evidence/minutes.doc.txt",
+      "metadata": {
+        "author": "Leena Ro",
+        "createdAt": "2026-02-11T13:05:18Z",
+        "modifiedAt": "2026-02-12T18:42:33Z",
+        "device": "CobaltPad-9",
+        "location": "HQ Annex 2",
+        "ipAsn": "192.0.2.29 / AS64582"
+      },
+      "timeline": [
+        { "time": "13:05", "label": "Meeting notes drafted" },
+        { "time": "18:42", "label": "Document amended with operation codename" },
+        { "time": "23:11", "label": "Copied into leak bundle by unknown process" }
+      ]
+    }
+  ]
+}

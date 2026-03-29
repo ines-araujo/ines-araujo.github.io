@@ -1,23 +1,24 @@
 {
-  "correctInsider": "Mara",
+  "correctInsider": "Sabrina Woodworker",
   "nodes": [
-    { "id": "Mara" },
-    { "id": "Dante" },
-    { "id": "Leena" },
-    { "id": "Kieran" },
-    { "id": "Opal" },
-    { "id": "Rook" },
-    { "id": "Nia" }
+    { "id": "Sabrina Woodworker" },
+    { "id": "Belly Eilish" },
+    { "id": "Lara Larsson" },
+    { "id": "Whitney Dallas" },
+    { "id": "Ma Donna" },
+    { "id": "Michael Johnson" },
+    { "id": "Cady Perry" }
   ],
   "links": [
-    { "source": "Mara", "target": "Dante", "weight": 9 },
-    { "source": "Mara", "target": "Leena", "weight": 8 },
-    { "source": "Mara", "target": "Kieran", "weight": 7 },
-    { "source": "Mara", "target": "Opal", "weight": 6 },
-    { "source": "Mara", "target": "Rook", "weight": 5 },
-    { "source": "Dante", "target": "Leena", "weight": 2 },
-    { "source": "Leena", "target": "Nia", "weight": 3 },
-    { "source": "Rook", "target": "Nia", "weight": 2 },
-    { "source": "Opal", "target": "Kieran", "weight": 1 }
+    { "source": "Sabrina Woodworker", "target": "Belly Eilish", "weight": 5 },
+    { "source": "Sabrina Woodworker", "target": "Lara Larsson", "weight": 6 },
+    { "source": "Sabrina Woodworker", "target": "Whitney Dallas", "weight": 5 },
+    { "source": "Sabrina Woodworker", "target": "Ma Donna", "weight": 8 },
+    { "source": "Sabrina Woodworker", "target": "Michael Johnson", "weight": 7 },
+    { "source": "Sabrina Woodworker", "target": "Cady Perry", "weight": 6 },
+    { "source": "Belly Eilish", "target": "Lara Larsson", "weight": 3 },
+    { "source": "Lara Larsson", "target": "Whitney Dallas", "weight": 2 },
+    { "source": "Ma Donna", "target": "Michael Johnson", "weight": 4 },
+    { "source": "Michael Johnson", "target": "Cady Perry", "weight": 3 }
   ]
 }

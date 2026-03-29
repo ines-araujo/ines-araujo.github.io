@@ -3,50 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Final Debrief - The Leak</title>
+    <title>Conclusion — The Leak</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="scanline">
-    <main class="container">
-      <div class="topbar">
-        <a class="btn" href="./debate.html">Back</a>
-        <div class="tag">FINAL DEBRIEF</div>
-      </div>
+    <div id="progressToast" class="progress-toast" role="status" aria-live="polite"></div>
+    <div class="layout-with-nav">
+      <aside id="investigationNavMount" aria-label="Investigation navigation"></aside>
+      <main class="main-flow container-inner">
+        <div class="topbar">
+          <a class="btn btn-secondary" href="./debate.html">Case File 04</a>
+          <div class="tag">CONCLUSION</div>
+        </div>
 
-      <section class="panel">
-        <h2>Conclusion</h2>
-        <p>
-          Metadata is not harmless. It can expose identities, routines, affiliations, and vulnerabilities
-          even when content remains hidden.
-        </p>
-        <ul>
-          <li>Document metadata can reveal origin stories and manipulation timelines.</li>
-          <li>Communication logs expose power structures and intermediaries.</li>
-          <li>Location traces reconstruct private life with alarming precision.</li>
-        </ul>
-      </section>
+        <section class="panel signal-intro">
+          <h1>What you practiced</h1>
+          <p>
+            You connected <strong>document metadata</strong> to a timeline, mapped <strong>communication strength</strong> in a
+            graph, and inferred <strong>routines from location points</strong>. Together, these skills mirror how metadata is
+            used in real investigations—and why it worries privacy advocates when collected at scale.
+          </p>
+          <div class="reveal-box">
+            <strong>Final reveal:</strong> This scenario is inspired by real events and public reporting on metadata surveillance,
+            fitness-app location exposure, and whistleblower disclosures—not by a single case file.
+          </div>
+        </section>
 
-      <section class="panel">
-        <h3>Reflection Questions</h3>
-        <ul>
-          <li>How much can metadata reveal without reading message content?</li>
-          <li>Where is the line between security operations and abuse?</li>
-          <li>Would you accept this level of surveillance for your own data?</li>
-        </ul>
-        <h3>Further Reading / Tools</h3>
-        <ul>
-          <li><a href="https://ssd.eff.org/" target="_blank" rel="noreferrer">EFF Surveillance Self-Defense</a></li>
-          <li><a href="https://privacyguides.org/" target="_blank" rel="noreferrer">Privacy Guides</a></li>
-          <li><a href="https://signal.org/" target="_blank" rel="noreferrer">Signal</a></li>
-          <li><a href="https://www.torproject.org/" target="_blank" rel="noreferrer">Tor Project</a></li>
-        </ul>
-        <p class="footer-note">Post-case note: anomaly detected in analyst activity log. Source: internal observer.</p>
-      </section>
+        <section class="panel">
+          <h2>Reflection questions</h2>
+          <ul class="learning-goals">
+            <li>How much can metadata reveal if you never read message content?</li>
+            <li>Where should law and policy draw the line between targeted inquiry and population-scale collection?</li>
+            <li>Would you accept the same metadata exposure for your own devices that analysts apply to suspects?</li>
+            <li>Was the fictional analyst justified in using these techniques for an internal leak inquiry?</li>
+          </ul>
+        </section>
 
-      <section class="panel">
-        <a class="btn" href="./references.html">Open References</a>
-        <a class="btn" href="./index.html">Return to Landing</a>
-      </section>
-    </main>
+        <section class="panel">
+          <h2>Real-world anchors</h2>
+          <p class="muted">
+            Edward Snowden’s 2013 disclosures to journalists catalyzed global debate about NSA programs that relied heavily on
+            metadata (e.g., call records and network selectors). Separately, location metadata from apps like Strava has
+            highlighted military and personal security risks when routes are aggregated on public maps.
+          </p>
+          <p class="muted">
+            Since Edward Snowden’s 2013 disclosures, the world of surveillance has become both more visible and more entrenched. 
+            His leaks exposed the scale of bulk metadata collection, uprooted the “security vs. privacy” myth, and triggered modest 
+            reforms like the USA FREEDOM Act and a push toward encrypted web traffic. At the same time, states have expanded 
+            digital‑surveillance powers, embraced lawful‑interception‑style architectures, and leaned further on data‑sharing with tech platforms, 
+            deepening the reach of always‑on monitoring. Public awareness and skepticism have grown, but the underlying infrastructure—of 
+            metadata‑driven analytics, location‑tracking, and cross‑agency data sharing—is now more pervasive than before, making surveillance 
+            less an exception and more the default backdrop of digital life.
+          </p>
+        </section>
+
+        <section class="panel">
+          <h2>Videos &amp; articles</h2>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <h3 class="instruction-title">Video</h3>
+              <p>
+                <a
+                  href="https://www.youtube.com/watch?v=yzJ0c_deZv0"
+                  class="link-accent"
+                  target="_blank"
+                  rel="noreferrer"
+                  >The Guardian: Edward Snowden interview (example entry point)</a
+                >
+                — search for follow-ups and primary sources as you study.
+              </p>
+            </article>
+            <article class="resource-card">
+              <h3 class="instruction-title">Reporting</h3>
+              <p>
+                <a href="https://www.theguardian.com/world/nsa" class="link-accent" target="_blank" rel="noreferrer"
+                  >The Guardian — NSA / surveillance coverage</a
+                >
+                (collection of articles on metadata-related programs and policy).
+              </p>
+            </article>
+            <article class="resource-card">
+              <h3 class="instruction-title">Technical &amp; policy</h3>
+              <p>
+                <a href="https://www.eff.org/deeplinks/2013/06/why-metadata-matters" class="link-accent" target="_blank" rel="noreferrer"
+                  >EFF — Why metadata matters</a
+                >
+              </p>
+              <p>
+                <a href="https://www.privacyinternational.org/" class="link-accent" target="_blank" rel="noreferrer"
+                  >Privacy International</a
+                >
+                — research on surveillance and data protection.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Tools &amp; further reading</h2>
+          <ul class="link-list">
+            <li><a href="https://ssd.eff.org/" target="_blank" rel="noreferrer">EFF — Surveillance Self-Defense</a></li>
+            <li><a href="https://www.torproject.org/" target="_blank" rel="noreferrer">Tor Project</a></li>
+            <li><a href="https://signal.org/" target="_blank" rel="noreferrer">Signal</a></li>
+            <li><a href="./references.html" class="btn btn-secondary" style="display: inline-block; margin-top: 0.5rem">Full reference list</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+    <script src="./js/state.js"></script>
+    <script src="./js/investigation-nav.js"></script>
+    <script src="./js/easter-eggs.js"></script>
   </body>
 </html>

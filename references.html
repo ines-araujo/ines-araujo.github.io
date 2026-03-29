@@ -3,36 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>References - The Leak</title>
+    <title>References — The Leak</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="scanline">
-    <main class="container">
-      <div class="topbar">
-        <a class="btn" href="./index.html">Back to Landing</a>
-        <div class="tag">REFERENCES</div>
-      </div>
-      <section class="panel">
-        <h2>Selected Sources (Placeholder)</h2>
-        <ol class="ref-list">
-          <li>
-            Solove, D. J. (2008). <em>Understanding Privacy</em>. Harvard University Press.
-          </li>
-          <li>
-            Kitchin, R. (2021). <em>The Data Revolution</em>. SAGE Publications.
-          </li>
-          <li>
-            Electronic Frontier Foundation. <a href="https://www.eff.org/issues/privacy" target="_blank" rel="noreferrer">Privacy Resources</a>.
-          </li>
-          <li>
-            United Nations Office of the High Commissioner for Human Rights.
-            <em>The Right to Privacy in the Digital Age</em>.
-          </li>
-          <li>
-            U.S. PCLOB reports on surveillance oversight (placeholder citation).
-          </li>
-        </ol>
-      </section>
-    </main>
+    <div id="progressToast" class="progress-toast" role="status" aria-live="polite"></div>
+    <div class="layout-with-nav">
+      <aside id="investigationNavMount" aria-label="Investigation navigation"></aside>
+      <main class="main-flow container-inner">
+        <div class="topbar">
+          <a class="btn btn-secondary" href="./conclusion.html">Conclusion</a>
+          <div class="tag">REFERENCES</div>
+        </div>
+
+        <section class="panel  signal-intro">
+          <h2>Books &amp; reports</h2>
+          <ol class="ref-list">
+            <li>
+              Solove, D. J. (2008). <em>Understanding Privacy</em>. Harvard University Press.
+            </li>
+            <li>
+              Advanced topics on privacy enhancing technologies (CS‑523). École polytechnique fédérale de Lausanne (EPFL), School of Computer and Communication Sciences. Course description. Available: https://edu.epfl.ch/coursebook/en/advanced-topics-on-privacy-enhancing-technologies-CS-523 [Accessed: March 2026].
+            </li>
+            <li>
+              Westin, A. F. (1970). Privacy and Freedom. New York: Atheneum.
+            </li>
+            <li>
+              Agre, P. E. (1999). “Surveillance and Expression in the Information Age.” Human–Computer Interaction, 14(3–4), 135–167.
+            </li>
+          </ol>
+        </section>
+
+        <section class="panel">
+          <h2>Articles &amp; explainers</h2>
+          <ol class="ref-list" start="5">
+            <li>
+              <a href="https://www.eff.org/deeplinks/2013/06/why-metadata-matters" target="_blank" rel="noreferrer"
+                >Electronic Frontier Foundation — “Why Metadata Matters”</a
+              >
+            </li>
+            <li>
+              <a href="https://www.theguardian.com/world/edward-snowden" target="_blank" rel="noreferrer"
+                >The Guardian — Edward Snowden / surveillance archive</a
+              >
+            </li>
+          </ol>
+        </section>
+
+        <section class="panel">
+          <h2>Project</h2>
+          <p>
+            Source &amp; deployment:
+            <a href="https://github.com/ines-araujo/ines-araujo.github.io" class="link-accent" target="_blank" rel="noreferrer"
+              >github.com/ines-araujo/ines-araujo.github.io</a
+            >
+          </p>
+        </section>
+      </main>
+    </div>
+    <script src="./js/state.js"></script>
+    <script src="./js/investigation-nav.js"></script>
+    <script src="./js/easter-eggs.js"></script>
   </body>
 </html>

@@ -1,62 +1,69 @@
 {
-  "correctSuspect": "Mara Voss",
-  "suspects": ["Mara Voss", "Dante Ives", "Leena Ro", "Kieran Holt"],
+  "correctSuspect": "All the previous options",
+  "suspects": ["Sabrina Woodworker", "Belly Eilish", "Lara Larsson", "Whitney Dallas", "All the previous options"],
   "files": [
     {
       "id": "f1",
-      "fileName": "policy-brief.pdf",
-      "fileType": "PDF",
-      "link": "./assets/evidence/policy-brief.pdf.txt",
+      "fileName": "Satellite_Link_Policy_v5.pptx",
+      "fileType": "PPTX",
+      "description": "PowerPoint presentation on encryption upgrades for government satellites. Saved from a shared sandbox so authorship is blurred.",
       "metadata": {
-        "author": "Mara Voss",
-        "createdAt": "2026-02-10T09:14:22Z",
-        "modifiedAt": "2026-02-12T21:54:11Z",
-        "device": "OrionBook-14 / Linux",
-        "location": "North Dock, Sector 3",
+        "author": "t_user",
+        "createdAt": "2026-03-16T09:45:00Z",
+        "modifiedAt": "2026-03-18T17:11:00Z",
+        "device": "SIGMA-7 Virtual Station 04 / Sandbox",
+        "location": "Test Lab Bay 7",
         "ipAsn": "198.51.100.44 / AS64580"
       },
       "timeline": [
-        { "time": "09:14", "label": "File created on OrionBook-14" },
-        { "time": "21:54", "label": "Final edit before encrypted transfer" },
-        { "time": "22:03", "label": "Upload attempt to offshore endpoint" }
+        { "time": "09:45", "label": "File created on SIGMA-7 Virtual Station 04" },
+        { "time": "11:22", "label": "Template merged from internal wiki /finance-proposals/B2027.dotm" },
+        { "time": "14:18", "label": "Edit sessions from multiple cryptography‑lab users via t_user" },
+        { "time": "17:11", "label": "Final edit before encrypted transfer" },
+        { "time": "17:15", "label": "Last printed attempt to sanitize GPS slide" },
+        { "time": "17:22", "label": "Checksum logged in outbound proxy metadata" }
       ]
     },
     {
       "id": "f2",
-      "fileName": "camera-still.jpg",
-      "fileType": "Image",
-      "link": "./assets/evidence/camera-still.svg",
+      "fileName": "SecureComms_Net_Audit.xlsx",
+      "fileType": "Sheet",
+      "description": "VPN audit spreadsheet with redacted IP ranges. Final save comes from the shared sandbox, not from any individual account.",
       "metadata": {
-        "author": "Station Cam 07",
-        "createdAt": "2026-02-12T20:52:01Z",
-        "modifiedAt": "2026-02-12T20:52:01Z",
-        "device": "OptiEye C7",
-        "location": "Transit Hub",
+        "author": "t_user",
+        "createdAt": "2026-03-17T14:30:18Z",
+        "modifiedAt": "2026-03-18T19:04:33Z",
+        "device": "SIGMA-7 Virtual Station 04 / Sandbox",
+        "location": "SecureComms Lab",
         "ipAsn": "203.0.113.12 / AS64581"
       },
       "timeline": [
-        { "time": "20:52", "label": "Still frame captured at transit gate" },
-        { "time": "21:01", "label": "Image copied into analyst archive" },
-        { "time": "22:20", "label": "Forwarded to anonymous relay" }
+        { "time": "14:30", "label": "Initial VPN audit created by Sabrina Croft" },
+        { "time": "16:45", "label": "Shared read‑only to SecureComms team" },
+        { "time": "19:04", "label": "Final modifications from t_user sandbox" },
+        { "time": "19:15", "label": "Version stamped by document management system" },
+        { "time": "23:11", "label": "Copied into leak bundle by unknown process" }
       ]
     },
     {
       "id": "f3",
-      "fileName": "minutes.doc",
+      "fileName": "Budget_proposal_SIGINT_2027.docx",
       "fileType": "Document",
-      "link": "./assets/evidence/minutes.doc.txt",
+      "description": "Budget proposal with hidden XML comments that reference multiple satellite‑policy drafts, tying several cryptography‑lab users together.",
       "metadata": {
-        "author": "Leena Ro",
-        "createdAt": "2026-02-11T13:05:18Z",
-        "modifiedAt": "2026-02-12T18:42:33Z",
-        "device": "CobaltPad-9",
-        "location": "HQ Annex 2",
+        "author": "BEILISH",
+        "createdAt": "2026-03-14T08:23:18Z",
+        "modifiedAt": "2026-03-18T23:58:33Z",
+        "device": "SIGMA-7 Virtual Station 04 / Sandbox",
+        "location": "Finance Proposal Server",
         "ipAsn": "192.0.2.29 / AS64582"
       },
       "timeline": [
-        { "time": "13:05", "label": "Meeting notes drafted" },
-        { "time": "18:42", "label": "Document amended with operation codename" },
-        { "time": "23:11", "label": "Copied into leak bundle by unknown process" }
+        { "time": "08:23", "label": "Budget proposal drafted by BEILISH" },
+        { "time": "12:47", "label": "Shared read‑only to Directorate of Signals" },
+        { "time": "15:18", "label": "Comments added by multiple cryptography‑lab users via t_user" },
+        { "time": "23:58", "label": "Final save from t_user sandbox before export" },
+        { "time": "23:59", "label": "Copied into leak bundle by unknown process" }
       ]
     }
   ]

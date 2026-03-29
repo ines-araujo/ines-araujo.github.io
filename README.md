@@ -1,68 +1,45 @@
-# THE LEAK - Interactive Metadata Investigation
+# THE LEAK — Interactive Metadata Investigation
 
-`THE LEAK` is a static, narrative-driven educational blog experience built for GitHub Pages.
-Users play an intelligence analyst and learn how metadata can expose identity, behavior, and social links.
+`THE LEAK` is a static, learner-first educational experience for GitHub Pages. It teaches metadata analysis through a short investigation: documents, communication graphs, location inference, and an ethics debate.
+
+**Repository:** [github.com/ines-araujo/ines-araujo.github.io](https://github.com/ines-araujo/ines-araujo.github.io)
 
 ## Features
 
-- Story-based multi-page flow with gamified progression.
-- Metadata mission with evidence files, parsed fields, and timeline builder.
-- Interactive communication graph (D3.js) with node metrics.
-- Location inference mission (Leaflet.js) with GPS-style points.
-- Dialogue-tree debate with converging ending and ethical twist.
-- Persistent progression and decisions using `localStorage`.
-- Dark classified aesthetic, glitch hints, and hidden surveillance cues.
+- Mayer-style signaling: definitions and instructions before interactions, reduced clutter.
+- Progressive hints (“Need a hint?”) on each mission page.
+- Gated progression: “Next” links stay disabled until the task is solved; locked nav shows a toast.
+- Persistent **Investigation navigation** (all pages): chapter links, Begin/Continue, Reset.
+- Disclaimer access gate on first visit (`localStorage` key `disclaimerAccepted`).
+- Case files: forensic-style document viewer, D3 social graph, Leaflet map (grayscale tiles), branching debate.
 
-## Project Structure
+## Project structure
 
 ```text
-metadata/
-  assets/
-    evidence/
-  css/
-    style.css
+  assets/evidence/
+  css/style.css
   js/
-    state.js
-    typing.js
-    landing.js
-    document-metadata.js
-    social-graph.js
-    location.js
-    debate.js
+    state.js, typing.js, disclaimer-gate.js, investigation-nav.js, hints.js,
+    landing.js, document-metadata.js, social-graph.js, location.js, debate.js, easter-eggs.js
   data/
-    document-metadata.json
-    communications.json
-    location-points.json
-  index.html
-  docs-metadata.html
-  social-graph.html
-  location-analysis.html
-  debate.html
-  conclusion.html
-  references.html
+  index.html, docs-metadata.html, social-graph.html, location-analysis.html,
+  debate.html, conclusion.html, references.html
 ```
 
-## Run Locally
-
-Because modules fetch local JSON files, use a static server (not `file://`):
+## Run locally
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open:
+Open `http://localhost:8000/` (not `file://`, so JSON loads correctly).
 
-- `http://localhost:8000/`
+## Deploy (GitHub Pages)
 
-## Deploy to GitHub Pages
-
-1. Push this project to a GitHub repository.
-2. In repository settings, open **Pages**.
-3. Set source to your main branch and the `/(root)` folder (or `/docs` if you move files there).
-4. Save and wait for deployment.
-5. Access your published site via the GitHub Pages URL.
+1. Push this repo to GitHub.
+2. **Settings → Pages**: deploy from branch `main` and `/ (root)` (or `/docs` if you move files).
+3. Wait for the Pages URL to go live.
 
 ## Notes
 
-- All people, agencies, and datasets are fictional.
-- Replace placeholder repository links and references with your own.
+- Characters and datasets are fictional; the conclusion links real reporting and explainers for classroom use.

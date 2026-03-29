@@ -27,6 +27,7 @@ function openGate() {
 
   // Save acceptance, play exit animation, and restore page interactivity.
   button.addEventListener("click", () => {
+    // Persist consent so returning visitors skip the gate (see initDisclaimerGate).
     localStorage.setItem(DISCLAIMER_KEY, "true");
     document.body.classList.add("gate-exit");
     window.setTimeout(() => {

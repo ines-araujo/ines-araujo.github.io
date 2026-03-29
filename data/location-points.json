@@ -6,53 +6,29 @@
     "sensitive": "Community Health Clinic"
   },
   "points": [
-    {
-      "lat": 51.5039,
-      "lng": -0.1215,
-      "timestamp": "2026-02-15T22:18:00Z",
-      "type": "night",
-      "cluster": "Riverside-Night-Cluster",
-      "label": "Apartment block entrance"
-    },
-    {
-      "lat": 51.5042,
-      "lng": -0.1209,
-      "timestamp": "2026-02-16T23:41:00Z",
-      "type": "night",
-      "cluster": "Riverside-Night-Cluster",
-      "label": "Nearby transit stop"
-    },
-    {
-      "lat": 51.5105,
-      "lng": -0.1332,
-      "timestamp": "2026-02-17T09:10:00Z",
-      "type": "work",
-      "cluster": "Civic-Tower-Day-Cluster",
-      "label": "Office district entry"
-    },
-    {
-      "lat": 51.5111,
-      "lng": -0.1327,
-      "timestamp": "2026-02-17T12:35:00Z",
-      "type": "work",
-      "cluster": "Civic-Tower-Day-Cluster",
-      "label": "Civic Tower cafeteria"
-    },
-    {
-      "lat": 51.4981,
-      "lng": -0.1412,
-      "timestamp": "2026-02-18T18:52:00Z",
-      "type": "sensitive",
-      "cluster": "Outlier-Sensitive",
-      "label": "Community Health Clinic"
-    },
-    {
-      "lat": 51.5174,
-      "lng": -0.1091,
-      "timestamp": "2026-02-18T16:08:00Z",
-      "type": "work",
-      "cluster": "Civic-Tower-Day-Cluster",
-      "label": "Partner ministry office"
-    }
+    { "lat": 51.5039, "lng": -0.1215, "timestamp": "2026-02-15T22:18:00Z", "type": "night", "cluster": "Riverside-Night-Cluster", "label": "Apartment block entrance" },
+    { "lat": 51.5042, "lng": -0.1209, "timestamp": "2026-02-16T23:41:00Z", "type": "night", "cluster": "Riverside-Night-Cluster", "label": "Transit stop" },
+    { "lat": 51.5034, "lng": -0.1222, "timestamp": "2026-02-14T00:12:00Z", "type": "night", "cluster": "Riverside-Night-Cluster", "label": "Late return" },
+    { "lat": 51.5045, "lng": -0.1198, "timestamp": "2026-02-13T21:05:00Z", "type": "night", "cluster": "Riverside-Night-Cluster", "label": "Corner shop" },
+    { "lat": 51.5031, "lng": -0.1204, "timestamp": "2026-02-17T01:33:00Z", "type": "night", "cluster": "Riverside-Night-Cluster", "label": "Night walk" },
+    { "lat": 51.5048, "lng": -0.1218, "timestamp": "2026-02-18T22:44:00Z", "type": "night", "cluster": "Riverside-Night-Cluster", "label": "Residential street" },
+    { "lat": 51.5105, "lng": -0.1332, "timestamp": "2026-02-17T09:10:00Z", "type": "work", "cluster": "Civic-Tower-Day-Cluster", "label": "Office district entry" },
+    { "lat": 51.5111, "lng": -0.1327, "timestamp": "2026-02-17T12:35:00Z", "type": "work", "cluster": "Civic-Tower-Day-Cluster", "label": "Civic Tower cafeteria" },
+    { "lat": 51.5108, "lng": -0.1340, "timestamp": "2026-02-16T08:55:00Z", "type": "work", "cluster": "Civic-Tower-Day-Cluster", "label": "Morning arrival" },
+    { "lat": 51.5114, "lng": -0.1319, "timestamp": "2026-02-18T10:22:00Z", "type": "work", "cluster": "Civic-Tower-Day-Cluster", "label": "Meeting block" },
+    { "lat": 51.5099, "lng": -0.1335, "timestamp": "2026-02-19T15:08:00Z", "type": "work", "cluster": "Civic-Tower-Day-Cluster", "label": "Afternoon exit" },
+    { "lat": 51.5174, "lng": -0.1091, "timestamp": "2026-02-18T16:08:00Z", "type": "work", "cluster": "Civic-Tower-Day-Cluster", "label": "Partner ministry office" },
+    { "lat": 51.5102, "lng": -0.1325, "timestamp": "2026-02-12T13:40:00Z", "type": "work", "cluster": "Civic-Tower-Day-Cluster", "label": "Lunch route" },
+    { "lat": 51.4981, "lng": -0.1412, "timestamp": "2026-02-18T18:52:00Z", "type": "sensitive", "cluster": "Outlier-Sensitive", "label": "Community Health Clinic" },
+    { "lat": 51.4984, "lng": -0.1408, "timestamp": "2026-02-11T19:10:00Z", "type": "sensitive", "cluster": "Outlier-Sensitive", "label": "Supermarket" },
+    { "lat": 51.5065, "lng": -0.1250, "timestamp": "2026-02-17T18:20:00Z", "type": "other", "cluster": "Transit-Noise", "label": "Commuter path" },
+    { "lat": 51.5080, "lng": -0.1280, "timestamp": "2026-02-16T12:11:00Z", "type": "other", "cluster": "Transit-Noise", "label": "City park edge" },
+    { "lat": 51.5020, "lng": -0.1180, "timestamp": "2026-02-15T14:33:00Z", "type": "other", "cluster": "Transit-Noise", "label": "Shopping district" },
+    { "lat": 51.5140, "lng": -0.1350, "timestamp": "2026-02-14T11:02:00Z", "type": "other", "cluster": "Transit-Noise", "label": "Weekend errand" },
+    { "lat": 51.5005, "lng": -0.1305, "timestamp": "2026-02-13T17:44:00Z", "type": "other", "cluster": "Transit-Noise", "label": "River path" },
+    { "lat": 51.5120, "lng": -0.1200, "timestamp": "2026-02-12T09:50:00Z", "type": "other", "cluster": "Transit-Noise", "label": "Cross-town travel" },
+    { "lat": 51.5055, "lng": -0.1360, "timestamp": "2026-02-19T20:15:00Z", "type": "night", "cluster": "Riverside-Night-Cluster", "label": "Evening return" },
+    { "lat": 51.5112, "lng": -0.1328, "timestamp": "2026-02-20T11:05:00Z", "type": "work", "cluster": "Civic-Tower-Day-Cluster", "label": "Weekday desk" },
+    { "lat": 51.4978, "lng": -0.1415, "timestamp": "2026-02-10T12:30:00Z", "type": "sensitive", "cluster": "Outlier-Sensitive", "label": "Bowling" }
   ]
 }

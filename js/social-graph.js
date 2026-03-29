@@ -16,45 +16,77 @@ function computeMetrics(nodes, links) {
   return degree;
 }
 
-function bridgeScore(nodeId, links) {
-  const touched = links.filter((l) => l.source === nodeId || l.target === nodeId);
-  const groups = new Set();
-  touched.forEach((l) => {
-    groups.add(l.source[0]);
-    groups.add(l.target[0]);
+function bridgeSpread(nodeId, links) {
+  const neighbors = new Set();
+  links.forEach((l) => {
+    const a = typeof l.source === "object" ? l.source.id : l.source;
+    const b = typeof l.target === "object" ? l.target.id : l.target;
+    if (a === nodeId) neighbors.add(b);
+    if (b === nodeId) neighbors.add(a);
   });
-  return groups.size;
+  return neighbors.size;
 }
 
 async function initGraph() {
   guardPage();
+  mountHintBlock("hintMountGraph", [
+    "Click several nodes and compare weighted degree—the insider should lead the pack.",
+    "Use Highlight hubs to see who the graph centers on; cross-check with your notes from Case File 01.",
+    "The suspect is the person with the most connected node of the graph"
+  ]);
+
   const res = await fetch("./data/communications.json");
   const data = await res.json();
   const degree = computeMetrics(data.nodes, data.links);
 
-  const width = document.getElementById("graph").clientWidth;
-  const height = 440;
+  const container = document.getElementById("graph");
+  const width = container.clientWidth || 640;
+  const height = 460;
+
   const svg = d3
     .select("#graph")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
-    .style("background", "transparent");
+    .attr("role", "img")
+    .attr("aria-label", "Communication graph");
+
+  const defs = svg.append("defs");
+  const glow = defs
+    .append("filter")
+    .attr("id", "node-glow")
+    .attr("x", "-40%")
+    .attr("y", "-40%")
+    .attr("width", "180%")
+    .attr("height", "180%");
+  glow.append("feGaussianBlur").attr("stdDeviation", "1.8").attr("result", "blur");
+  const merge = glow.append("feMerge");
+  merge.append("feMergeNode").attr("in", "blur");
+  merge.append("feMergeNode").attr("in", "SourceGraphic");
 
   const simulation = d3
     .forceSimulation(data.nodes)
-    .force("link", d3.forceLink(data.links).id((d) => d.id).distance(120))
-    .force("charge", d3.forceManyBody().strength(-250))
-    .force("center", d3.forceCenter(width / 2, height / 2));
+    .force(
+      "link",
+      d3
+        .forceLink(data.links)
+        .id((d) => d.id)
+        .distance(150)
+        .strength(0.35)
+    )
+    .force("charge", d3.forceManyBody().strength(-140))
+    .force("center", d3.forceCenter(width / 2, height / 2))
+    .force("collision", d3.forceCollide().radius(28));
 
   const link = svg
     .append("g")
+    .attr("stroke-linecap", "round")
     .selectAll("line")
     .data(data.links)
     .enter()
     .append("line")
-    .attr("stroke", "#3b536a")
-    .attr("stroke-width", (d) => Math.max(1, d.weight / 2));
+    .attr("stroke", "rgba(120, 170, 200, 0.35)")
+    .attr("stroke-width", (d) => Math.max(0.8, d.weight * 0.35));
 
   const node = svg
     .append("g")
@@ -62,14 +94,13 @@ async function initGraph() {
     .data(data.nodes)
     .enter()
     .append("circle")
-    .attr("r", (d) => 9 + degree[d.id] * 0.7)
-    .attr("fill", "#66ffc2")
+    .attr("r", (d) => 11 + Math.min(degree[d.id] * 0.35, 14))
+    .attr("fill", "#0d1824")
+    .attr("stroke", "#7df5c8")
+    .attr("stroke-width", 2.2)
+    .attr("filter", "url(#node-glow)")
     .call(
-      d3
-        .drag()
-        .on("start", dragStarted)
-        .on("drag", dragged)
-        .on("end", dragEnded)
+      d3.drag().on("start", dragStarted).on("drag", dragged).on("end", dragEnded)
     );
 
   const labels = svg
@@ -79,14 +110,20 @@ async function initGraph() {
     .enter()
     .append("text")
     .text((d) => d.id)
-    .attr("fill", "#d9e3ef")
-    .attr("font-size", 11);
+    .attr("fill", "#f1f7fc")
+    .attr("font-size", 12)
+    .attr("font-weight", 600)
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em")
+    .style("paint-order", "stroke")
+    .style("stroke", "#05070a")
+    .style("stroke-width", "4px");
 
   node.on("click", (event, d) => {
     document.getElementById("nodeMetrics").innerHTML = `
       <strong>${d.id}</strong><br>
-      Degree centrality (weighted): ${degree[d.id]}<br>
-      Bridge indicator: ${bridgeScore(d.id, data.links)}
+      Weighted degree (sum of edge weights): ${degree[d.id]}<br>
+      Distinct contacts: ${bridgeSpread(d.id, data.links)}
     `;
   });
 
@@ -97,11 +134,11 @@ async function initGraph() {
       .attr("x2", (d) => d.target.x)
       .attr("y2", (d) => d.target.y);
     node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
-    labels.attr("x", (d) => d.x + 8).attr("y", (d) => d.y + 4);
+    labels.attr("x", (d) => d.x).attr("y", (d) => d.y);
   });
 
   function dragStarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
+    if (!event.active) simulation.alphaTarget(0.25).restart();
     d.fx = d.x;
     d.fy = d.y;
   }
@@ -120,7 +157,9 @@ async function initGraph() {
   const sorted = Object.entries(degree).sort((a, b) => b[1] - a[1]);
   document.getElementById("highlightHubBtn").addEventListener("click", () => {
     const hubs = new Set(sorted.slice(0, 2).map((x) => x[0]));
-    node.attr("fill", (d) => (hubs.has(d.id) ? "#ff6b6b" : "#66ffc2"));
+    node
+      .attr("stroke", (d) => (hubs.has(d.id) ? "#ffb86b" : "#7df5c8"))
+      .attr("fill", (d) => (hubs.has(d.id) ? "#1a1420" : "#0d1824"));
   });
 
   const select = document.getElementById("insiderSelect");
@@ -133,11 +172,7 @@ async function initGraph() {
 
   const feedback = document.getElementById("graphFeedback");
   const toLocation = document.getElementById("toLocation");
-  if (getState().progress.graphSolved) {
-    feedback.textContent = "Insider already verified.";
-    feedback.className = "status good";
-    return;
-  }
+  const syncProceed = bindProceedGuard(toLocation, "graphSolved");
 
   document.getElementById("confirmInsiderBtn").addEventListener("click", () => {
     const guess = select.value;
@@ -146,14 +181,20 @@ async function initGraph() {
     });
     if (guess === data.correctInsider) {
       markSolved("graph");
-      feedback.textContent = `${guess} confirmed as broker node. Next section unlocked.`;
+      feedback.textContent = `${guess} matches the broker pattern. Location analysis is now available.`;
       feedback.className = "status good";
-      toLocation.removeAttribute("aria-disabled");
+      syncProceed();
     } else {
-      feedback.textContent = `${guess} is connected, but not the central broker.`;
+      feedback.textContent = "Not the strongest match—compare weighted degree and hub highlight.";
       feedback.className = "status warn";
     }
   });
+
+  if (getState().progress.graphSolved) {
+    feedback.textContent = "Task already completed. Proceed when ready.";
+    feedback.className = "status good";
+    syncProceed();
+  }
 }
 
 document.addEventListener("DOMContentLoaded", initGraph);

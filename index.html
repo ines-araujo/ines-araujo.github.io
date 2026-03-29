@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>THE LEAK</title>
+    <title>THE LEAK — Briefing</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body class="scanline gate-active">
@@ -20,74 +20,127 @@
         <h2 id="accessNoticeTitle" class="glitch-target">ACCESS NOTICE</h2>
         <p id="accessNoticeText">
           This is a fictional educational experience. Characters, agencies, and datasets are synthetic.
-          Repository link: <a href="#" class="muted">[insert GitHub repo URL]</a>
+          Repository:
+          <a href="https://github.com/ines-araujo/ines-araujo.github.io" class="link-accent" target="_blank" rel="noreferrer"
+            >github.com/ines-araujo/ines-araujo.github.io</a
+          >
         </p>
         <label for="disclaimerCheck" class="gate-check">
           <input id="disclaimerCheck" type="checkbox" />
           I understand and wish to proceed
         </label>
-        <button id="enterSystemBtn" type="button" disabled>ENTER SYSTEM</button>
-        <p class="footer-note">Unauthorized continuation is logged.</p>
+        <button id="enterSystemBtn" type="button" class="btn btn-primary" disabled>ENTER SYSTEM</button>
+        <p class="footer-note">Acknowledgment is stored locally in your browser for return visits.</p>
       </section>
     </div>
 
-    <main id="siteContent" class="container">
-      <div class="topbar">
-        <div class="tag">CLEARANCE: LEVEL 2</div>
-        <div id="monitorHint" class="tag glitch-target">MONITORING: ACTIVE</div>
-      </div>
+    <div id="siteContent" class="site-shell">
+      <div id="progressToast" class="progress-toast" role="status" aria-live="polite"></div>
+      <div class="layout-with-nav">
+        <aside id="investigationNavMount" aria-label="Investigation navigation"></aside>
+        <main class="main-flow container-inner">
+          <div class="topbar">
+            <div class="tag easter-flicker">CASE FILE 00 · BRIEFING</div>
+          </div>
 
-      <section class="panel">
-        <h1 class="hero-title glitch" data-text="THE LEAK">THE LEAK</h1>
-        <p id="typedIntro" class="typed"></p>
-        <p>
-          You are newly assigned to the Bureau of Signals Intelligence. A data leak has triggered an emergency investigation.
-          Your task is to analyze clues and metadata to identify who exposed classified operations.
-        </p>
-        <p class="muted">
-          Metadata is data about data: who created something, when, where, with which device, and how it moved across systems.
-          Even when content is encrypted or hidden, metadata can still reveal patterns of behavior.
-        </p>
-        <p class="hint">
-          Mission format: interactive investigation files, network analysis, geolocation inference, and a final ethical confrontation.
-        </p>
-        <div class="grid two">
-          <div class="panel">
-            <h3>Learning Goals</h3>
-            <ul>
-              <li>Read and interpret document metadata.</li>
-              <li>Build timelines from timestamps and technical traces.</li>
-              <li>Understand social graph analysis from call/email records.</li>
-              <li>Infer private routines from location points.</li>
-              <li>Debate surveillance ethics and accountability.</li>
+          <section class="panel signal-intro">
+            <h1 class="hero-title glitch" data-text="THE LEAK">THE LEAK</h1>
+            <a href="https://www.youtube.com/watch?si=-uT2fyVXQztyIF7o&v=kV2HDM86XgI&feature=youtu.be" class="link-no-accent" target="_blank" rel="noreferrer"><p id="typedIntro" class="typed" aria-live="polite"></p></a>
+
+            <div class="pretty-text">
+              <p>This is an educational blog, meant to teach users about cyber‑surveillance and metadata analysis through an interactive investigation scenario. Keep reading to begin the story.</p>
+            </div>
+
+            <div class="instruction-box">
+
+              <p>You will take the role of an agent at the <strong>Global Liaison in Threat Tracking and Espionage Response Agency</strong> of the fictional <strong>Republic of Auralia</strong> (also known as <strong>G.L.I.T.T.E.R.</strong>).</p>
+
+              <p>Your task in this simulation is to investigate a data breach that threatens to expose classified information on state-led surveillance programs.</p>
+
+              <h2 class="instruction-title">What you will do</h2>
+              <ol class="instruction-list">
+                <li>Inspect <strong>document metadata</strong> and build a timeline to name a lead suspect.</li>
+                <li>Explore a <strong>communication graph</strong> to find who brokers information inside a network.</li>
+                <li>Interpret <strong>location points</strong> to infer home, work, and a sensitive stop.</li>
+                <li>Complete a <strong>structured debate</strong> on security versus privacy, then read a short debrief.</li>
+              </ol>
+            </div>
+
+            <div class="pretty-text">
+              <p>Since the early 2000s, cyber-espionage has become the weapon of choice for national security organizations worldwide. Intelligence agencies — from the NSA to GCHQ to Switzerland’s own NDB — have conducted large-scale digital surveillance operations, often in the name of national security.</p>  
+              <p>However, after Edward Snowden’s 2013 revelations exposed the global reach of programs like <a href="https://www.theguardian.com/world/2013/jun/06/us-tech-giants-nsa-data"  class="link-accent" target="_blank" rel="noreferrer">PRISM</a> and <a href="https://www.theguardian.com/world/2013/jul/31/nsa-top-secret-program-online-data"  class="link-accent" target="_blank" rel="noreferrer">XKeyscore</a>, public trust in governments’ ability to manage personal data responsibly and protect citizen's privacy was profoundly shaken.</p>
+            </div>   
+              
+            <div class="key-concept" role="region" aria-label="Definition of metadata">
+              <h2 class="key-concept-title">What Is Privacy?</h2>
+
+              Privacy has many interpretations depending on context, discipline, and purpose. Below are three influential ways to understand it: privacy as control, privacy as practice, and privacy as confidentiality.
+
+              <article id="privacy-control">
+                <h4>Privacy as <strong>Control</strong></h4>
+                <blockquote>
+                  “The claim of individuals, groups, or institutions to determine for themselves when, how, and to what extent information about them is communicated to others.”  
+                  <cite>— Westin (1970)</cite>
+                </blockquote>
+
+
+                <h4>Privacy as <strong>Practice</strong></h4>
+                <blockquote>
+                  “The freedom from unreasonable constraints on the construction of one’s own identity”  
+                  <cite>— Agre (1999)</cite>
+                </blockquote>
+
+
+                <h4>Privacy as <strong>Confidentiality</strong></h4>
+                <blockquote>
+                  “The right to be let alone.”  
+                  <cite>— Warren & Brandeis (1890)</cite>
+                </blockquote>
+            </div>
+
+            <div class="pretty-text">
+              <p>Many people assume that encrypting our communications is enough to guarantee privacy. However, as this blog will show, encryption alone often does not provide full privacy protection when using modern communication systems.</p>
+              <p>Government-led surveillance programs frequently rely on the observation of communications metadata — rather than message content — to infer sensitive information about individuals.</p>
+            </div>
+
+            <div class="key-concept" role="region" aria-label="Definition of metadata">
+              <h2 class="key-concept-title">What is metadata?</h2>
+              <p>
+                <strong>Metadata</strong> is <em>data about data</em>: who created a file, when it was edited, which device or app
+                produced it, where it was saved, and how it moved between systems (for example IP routes or message headers).
+              </p>
+              <p class="muted key-concept-note">
+                Even when the <strong>content</strong> is encrypted or redacted, metadata can still describe behavior, relationships,
+                and routines. That is why it is powerful for investigators—and for anyone building profiles at scale.
+              </p>
+            </div>
+
+          </section>
+
+          <section class="panel">
+            <h2>Learning goals</h2>
+            <ul class="learning-goals">
+              <li>Define privacy and explain its importance in the digital context.</li>
+              <li>Explain what metadata is and distinguish it from the content of a message.</li>
+              <li>Identify ways in which everyday technologies and online services may unintentionally expose personal information.</li>
+              <li>Explain the “privacy versus security” tradeoff, and understand why privacy is now seen as a fundamental security feature driving the development of Privacy Enhancing Technologies (PETs).</li>
             </ul>
-          </div>
-          <div class="panel">
-            <h3>Disclaimer</h3>
-            <p>
-              This is a fictional educational experience. Characters, agencies, and datasets are synthetic.
-              Repository link: <a href="#" class="muted">[insert GitHub repo URL]</a>
+            <p class="footer-note narrative-continuity">
+              Your briefing continues in <strong>Case File 01</strong> with leaked file metadata—read the concepts there before
+              clicking anything labeled “inspect.”
             </p>
-            <button id="resetBtn" type="button">Reset Investigation State</button>
-          </div>
-        </div>
-        <p class="footer-note">
-          Internal memo: Exposure risk now includes external actors and internal analysts.
-          <span class="redacted">your workstation is not exempt</span>.
-        </p>
-      </section>
-
-      <section class="panel">
-        <h2>Investigation Navigation</h2>
-        <div id="chapterNav" class="nav-grid"></div>
-        <div style="margin-top: 1rem">
-          <a class="btn" href="./docs-metadata.html">Begin Investigation</a>
-        </div>
-      </section>
-    </main>
+            <p class="easter-egg" data-secret="Observers log session heatmaps. Your trail is data too.">
+              <span class="redacted hover-distort">hover: analyst footprint</span>
+            </p>
+          </section>
+        </main>
+      </div>
+    </div>
     <script src="./js/state.js"></script>
     <script src="./js/typing.js"></script>
     <script src="./js/disclaimer-gate.js"></script>
+    <script src="./js/investigation-nav.js"></script>
     <script src="./js/landing.js"></script>
+    <script src="./js/easter-eggs.js"></script>
   </body>
 </html>

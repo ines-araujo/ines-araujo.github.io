@@ -3,47 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case File 02 - Social Graph</title>
+    <title>Case File 02 — Social Graph</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   </head>
   <body class="scanline">
-    <main class="container">
-      <div class="topbar">
-        <a class="btn" href="./docs-metadata.html">Back</a>
-        <div class="tag">CASE FILE 02: COMMUNICATION WEB</div>
-      </div>
-
-      <section class="panel">
-        <h2>Phone Patterns &amp; Social Graphs</h2>
-        <p>
-          Analyze communication metadata to identify the insider node. Nodes represent people,
-          edges represent contact frequency.
-        </p>
-        <p class="hint">Drag nodes, click a node for centrality metrics, and track bridge behavior.</p>
-      </section>
-
-      <section class="grid two">
-        <div class="panel">
-          <div id="graph"></div>
+    <div id="progressToast" class="progress-toast" role="status" aria-live="polite"></div>
+    <div class="layout-with-nav">
+      <aside id="investigationNavMount" aria-label="Investigation navigation"></aside>
+      <main class="main-flow container-inner">
+        <div class="topbar">
+          <a class="btn btn-secondary" href="./docs-metadata.html">Case File 01</a>
+          <div class="tag">CASE FILE 02 · COMMUNICATION WEB</div>
         </div>
-        <div class="panel">
-          <h3>Node Metrics</h3>
-          <div id="nodeMetrics" class="metrics">Select a node to inspect metrics.</div>
-          <h3 style="margin-top: 1rem">Action</h3>
-          <button id="highlightHubBtn" type="button">Highlight Most Connected Nodes</button>
-          <div style="margin-top: 0.8rem">
-            <label for="insiderSelect">Mark insider:</label>
-            <select id="insiderSelect"></select>
-            <button id="confirmInsiderBtn" type="button">Confirm</button>
+
+        <section class="panel signal-intro">
+          <div class="pretty-text">
+            <p>When you correlate all three leaked files, you find a clear fingerprint: all of them share the same machine SID in their binary metadata — the Virtual Station 04 worker node — and all final saves occurred within the same two-hour window on March 18th, while all five users were logged in at different times.</p>
+
+            <p>Someone stayed behind and exfiltrated the files from the sandbox.</p>
+
+            <p>At this point, your director authorizes legally sanctioned surveillance. </p>
           </div>
-          <p id="graphFeedback" class="status"></p>
-          <a id="toLocation" class="btn" href="./location-analysis.html">Proceed to Location Analysis</a>
-        </div>
-      </section>
-    </main>
+
+          <div class="key-concept" role="region" aria-label="Definition of metadata">
+            <h2 class="key-concept-title">Examples of legally sanctioned surveillance in real countries</h2>
+            <ul class="learning-goals">
+              <li><strong>UK Investigatory Powers Act (2016) </strong>allows bulk metadata collection.</li>
+              <li><strong>France’s 2015 Surveillance Law </strong>permits intelligence agencies to monitor communications linked to terrorism or espionage.</li>
+              <li><strong>Switzerland’s NDG (Nachrichtendienstgesetz, 2017) </strong>expanded state monitoring capabilities with parliamentary oversight.</li>
+            </ul>
+        </section>
+
+        <section class="panel">
+          <h1>Social graph from metadata</h1>
+          <p>You start gathering metadata — not contents — from phone calls, emails, office Wi-Fi logs, social media, and VPN endpoints, in hopes to find incriminating information on the members of the lab. Using this information you build a social graph that you hope will give you insight into what’s going on.</p>
+          <p>
+            A <strong>social graph</strong> built from call or message metadata connects people (nodes) when they communicate
+            (edges). You rarely see content—only <em>who contacted whom, how often, and when</em>.
+          </p>
+          <div class="key-concept">
+            <h2 class="key-concept-title">What is an “insider” here?</h2>
+            <p>
+              An <strong>insider</strong> is someone positioned to move sensitive data out of a trusted enclave. In graph terms,
+              look for a node that is both highly connected and sits on many weighted paths—a <strong>hub</strong> or broker—not
+              necessarily the loudest speaker.
+            </p>
+          </div>
+          <div class="instruction-box">
+            <h2 class="instruction-title">Success criteria</h2>
+            <ul class="instruction-list">
+              <li>Compute <strong>weighted degree</strong> (sum of edge weights) per person.</li>
+              <li>Use <strong>Highlight hubs</strong> to compare the strongest connectors.</li>
+              <li>Select the person who best matches the broker pattern, then confirm.</li>
+            </ul>
+          </div>
+          <p class="muted small-print">
+            Real-world context: large-scale communication metadata has been central to debates about programs that collect “who
+            talked to whom” at population scale.
+          </p>
+          <div id="hintMountGraph"></div>
+        </section>
+
+        <section class="grid two">
+          <div class="panel graph-panel">
+            <div id="graph" class="graph-canvas"></div>
+          </div>
+          <div class="panel">
+            <h3>Node metrics</h3>
+            <div id="nodeMetrics" class="metrics">Select a node to inspect weighted degree and bridge spread.</div>
+            <h3 class="mt-1">Tools</h3>
+            <button id="highlightHubBtn" type="button" class="btn btn-secondary">Highlight most connected nodes</button>
+            <div class="form-row">
+              <label class="input-label" for="insiderSelect">Mark insider</label>
+              <select id="insiderSelect" class="input-field"></select>
+            </div>
+            <button id="confirmInsiderBtn" type="button" class="btn btn-primary">Confirm selection</button>
+            <p id="graphFeedback" class="status" role="status"></p>
+            <a id="toLocation" class="btn btn-primary btn-disabled" href="./location-analysis.html" aria-disabled="true"
+              >Proceed to location analysis</a
+            >
+          </div>
+        </section>
+      </main>
+    </div>
 
     <script src="./js/state.js"></script>
+    <script src="./js/hints.js"></script>
+    <script src="./js/investigation-nav.js"></script>
     <script src="./js/social-graph.js"></script>
+    <script src="./js/easter-eggs.js"></script>
   </body>
 </html>

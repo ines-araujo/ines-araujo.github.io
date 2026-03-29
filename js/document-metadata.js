@@ -1,10 +1,10 @@
 const metadataTips = {
-  author: "Author tags can expose internal identities or reused pseudonyms.",
-  createdAt: "Creation timestamps establish sequence and potential alibi windows.",
-  modifiedAt: "Modification time often reveals editing after original drafting.",
-  device: "Device fingerprints can tie files to specific hardware owners.",
-  location: "Embedded geotags can reveal where content was produced.",
-  ipAsn: "IP/ASN traces indicate networks and organizations involved in transfer."
+  author: "Author fields can reveal real names or shared service accounts.",
+  createdAt: "Creation time anchors when the file first existed in this form.",
+  modifiedAt: "Last saved time shows late edits—often close to exfiltration.",
+  device: "Software/device strings can match a specific workstation image.",
+  location: "Embedded or inferred location ties creation to a place.",
+  ipAsn: "Network metadata shows where a transfer left the building."
 };
 
 function guardPage() {
@@ -57,13 +57,15 @@ function renderEvidence(files) {
   const wrap = document.getElementById("evidenceList");
   wrap.innerHTML = "";
   files.forEach((file) => {
-    const entry = document.createElement("div");
-    entry.className = "evidence-item";
+    const entry = document.createElement("article");
+    entry.className = "forensic-card";
     entry.innerHTML = `
-      <strong>${file.fileName}</strong><br>
-      <span class="muted">${file.fileType}</span><br>
-      <a class="btn" href="${file.link}" download>Download</a>
-      <button type="button" data-file="${file.id}">Inspect Metadata</button>
+      <header class="forensic-card-head">
+        <span class="forensic-badge">${file.fileType}</span>
+        <span class="forensic-name">${file.fileName}</span>
+      </header>
+      <p class="forensic-desc">${file.description || ""}</p>
+      <button type="button" class="btn btn-secondary" data-file="${file.id}">Inspect in viewer</button>
     `;
     entry.querySelector("button").addEventListener("click", () => {
       renderMetadataRows(file.metadata);
@@ -78,10 +80,12 @@ function wireSuspectSelection(suspects, answer) {
   const feedback = document.getElementById("documentFeedback");
   const toGraph = document.getElementById("toGraph");
   const state = getState();
+  const syncProceed = bindProceedGuard(toGraph, "documentsSolved");
 
   suspects.forEach((name) => {
     const btn = document.createElement("button");
     btn.type = "button";
+    btn.className = "btn btn-secondary suspect-btn";
     btn.textContent = name;
     btn.addEventListener("click", () => {
       updateState((s) => {
@@ -89,11 +93,11 @@ function wireSuspectSelection(suspects, answer) {
       });
       if (name === answer) {
         markSolved("documents");
-        feedback.textContent = "Correct. Timeline points to " + answer + ". Next file unlocked.";
+        feedback.textContent = "After reviewing the metadata trail, you conclude that all five users from the cryptography lab are equally suspicious, not because any one of them stands out, but because the shared sandbox makes it that all of them are equally likely to have published the leaks.";
         feedback.className = "status good";
-        toGraph.removeAttribute("aria-disabled");
+        syncProceed();
       } else {
-        feedback.textContent = "Partial match, but this suspect does not align with first transfer event.";
+        feedback.textContent = "Not the best match: compare author and edits to the outbound transfer.";
         feedback.className = "status warn";
       }
     });
@@ -101,14 +105,20 @@ function wireSuspectSelection(suspects, answer) {
   });
 
   if (state.progress.documentsSolved) {
-    feedback.textContent = "Case solved earlier. Proceed when ready.";
+    feedback.textContent = "Task complete. You can proceed to the social graph.";
     feedback.className = "status good";
-    toGraph.removeAttribute("aria-disabled");
+    syncProceed();
   }
 }
 
 async function init() {
   guardPage();
+  mountHintBlock("hintMountDoc", [
+    "Satellite_Link_Policy_v5.pptx is authored and last modified by t_user on Virtual Station 04. Process logs show that each of the four cryptography‑lab users (Sabrina Woodworker, Belly Eilish, Lara Larsson and Whitney Dallas) ran sessions on that sandbox around the same window, and the timeline shows overlapping edit events from the same subnet. No per‑user artifact cleanly separates “who pressed save last.”",
+    "SecureComms_Net_Audit.xlsx was originally created by Sabrina Woodworker, but the final save and checksum in the outbound proxy are from t_user. The export timestamp lands five hours after she logged off, and your session logs show that two other lab members were still active on Virtual Station 04 during that window, with no clear audit trail tying the export to any one account.",
+    "Budget_proposal_SIGINT_2027.docx carries a hidden XML comment linking Satellite_Link_Policy_v5 to budget Section 3, again authored under t_user. The timeline shows that multiple lab users edited the budget file through the sandbox, and the final save timestamp aligns with the earliest moment the whistleblower site receives the bundle. Because every one of them has recent, logged activity on the same sandbox and the sandbox account is shared, you cannot isolate any individual as the exclusive source."
+  ]);
+
   const res = await fetch("./data/document-metadata.json");
   const data = await res.json();
   renderEvidence(data.files);

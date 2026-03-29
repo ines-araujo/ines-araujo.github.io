@@ -3,61 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case File 03 - Location Analysis</title>
+    <title>Case File 03 — Location Analysis</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
   <body class="scanline">
-    <main class="container">
-      <div class="topbar">
-        <a class="btn" href="./social-graph.html">Back</a>
-        <div class="tag">CASE FILE 03: MOVEMENT PATTERN</div>
-      </div>
-
-      <section class="panel">
-        <h2>Location Analysis</h2>
-        <p>
-          Use fictional GPS/activity metadata to infer likely home, workplace, and a sensitive meeting site.
-          The dataset includes timestamps and activity labels.
-        </p>
-      </section>
-
-      <section class="grid two">
-        <div class="panel">
-          <div id="map"></div>
+    <div id="progressToast" class="progress-toast" role="status" aria-live="polite"></div>
+    <div class="layout-with-nav">
+      <aside id="investigationNavMount" aria-label="Investigation navigation"></aside>
+      <main class="main-flow container-inner">
+        <div class="topbar">
+          <a class="btn btn-secondary" href="./social-graph.html">Case File 02</a>
+          <div class="tag">CASE FILE 03 · MOVEMENT PATTERN</div>
         </div>
-        <div class="panel">
-          <h3>Analyst Tasks</h3>
-          <p class="hint">Night clusters often reveal home. Weekday daytime clusters often reveal work.</p>
-          <div>
-            <label for="homeGuess">Home cluster:</label>
-            <select id="homeGuess"></select>
+
+        <section class="panel signal-intro">
+          <p>Sabrina is now your prime suspect.</p>
+          <p>But there’s a challenge: she’s on a mission, location classified.</p>
+          <p>Official records don’t reveal her address — yet you start digging. You decide to use metadata to track her location</p>
+        </section>
+
+        <section class="panel">
+          <h1>Location metadata</h1>
+          <p>
+            Phones, fitness apps (for example <strong>Strava</strong>), maps, and wearables record coordinates or cell sectors.
+            Even coarse points repeated over time reveal <strong>home</strong> (night repeats), <strong>work</strong> (weekday
+            daytime repeats), and <strong>sensitive stops</strong> (rare places that matter).
+          </p>
+          <div class="instruction-box">
+            <h2 class="instruction-title">Real-world parallels</h2>
+            <ul class="instruction-list">
+              <li>
+                Strava heatmaps have exposed patrol routes and base layouts when military personnel shared workout data—a
+                metadata leak without private messages. <a href="https://www.internationalaffairs.org.au/australianoutlook/strava-heatmap-exposes-military-bases/" class="link-accent" target="_blank" rel="noreferrer">See more</a>
+              </li>
+              <li>Aggregated location is often enough to deanonymize individuals in datasets that were “anonymous.” <a href="https://www.benthamsgaze.org/2018/10/02/on-location-time-and-membership-studying-how-aggregate-location-data-can-harm-users-privacy/" class="link-accent" target="_blank" rel="noreferrer">See more</a></li>
+            </ul>
           </div>
-          <div>
-            <label for="workGuess">Work cluster:</label>
-            <select id="workGuess"></select>
+          <div class="instruction-box">
+            <h2 class="instruction-title">Your task</h2>
+            <ol class="instruction-list">
+              <li>Study clusters on the map (night vs weekday vs outlier).</li>
+              <li>Assign <strong>home</strong> and <strong>work</strong> clusters using timestamps in popups.</li>
+              <li>Pick the <strong>sensitive location</strong> label that sits apart from routine loops.</li>
+              <li>Validate—then the debate unlocks.</li>
+            </ol>
           </div>
-          <div>
-            <label for="sensitiveGuess">Sensitive location:</label>
-            <select id="sensitiveGuess"></select>
+          <div id="hintMountLoc"></div>
+        </section>
+
+        <section class="grid two">
+          <div class="panel map-panel">
+            <div id="map"></div>
+            <p class="muted small-print map-caption">Colored markers show point categories; open popups for timestamps.</p>
           </div>
-          <button id="validateLocationBtn" type="button">Validate Analysis</button>
-          <p id="locationFeedback" class="status"></p>
-          <a id="toDebate" class="btn" href="./debate.html">Proceed to Confrontation</a>
-        </div>
-      </section>
-    </main>
+          <div class="panel">
+            <h3>Inference controls</h3>
+            <div class="form-row">
+              <label class="input-label" for="homeGuess">Home cluster</label>
+              <select id="homeGuess" class="input-field"></select>
+            </div>
+            <div class="form-row">
+              <label class="input-label" for="workGuess">Work cluster</label>
+              <select id="workGuess" class="input-field"></select>
+            </div>
+            <div class="form-row">
+              <label class="input-label" for="sensitiveGuess">Sensitive location</label>
+              <select id="sensitiveGuess" class="input-field"></select>
+            </div>
+            <button id="validateLocationBtn" type="button" class="btn btn-primary">Validate analysis</button>
+            <p id="locationFeedback" class="status" role="status"></p>
+            <a id="toDebate" class="btn btn-primary btn-disabled" href="./debate.html" aria-disabled="true">Proceed to debate</a>
+          </div>
+        </section>
+      </main>
+    </div>
     <script src="./js/state.js"></script>
+    <script src="./js/hints.js"></script>
+    <script src="./js/investigation-nav.js"></script>
     <script src="./js/location.js"></script>
+    <script src="./js/easter-eggs.js"></script>
   </body>
 </html>

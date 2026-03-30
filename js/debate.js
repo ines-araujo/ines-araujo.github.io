@@ -241,7 +241,9 @@ function renderNode(nodeKey) {
   const feedback = document.getElementById("debateFeedback");
 
   speaker.textContent = `SPEAKER: ${node.speaker}`;
-  text.textContent = node.text;
+  const intervention = document.createElement("p");
+  intervention.textContent = `\n ${node.speaker}: ${node.text}`;
+  text.appendChild(intervention);
   choices.innerHTML = "";
 
   if (!node.choices.length) {
@@ -257,7 +259,11 @@ function renderNode(nodeKey) {
     btn.type = "button";
     btn.className = "btn btn-secondary";
     btn.textContent = choice.text;
-    btn.addEventListener("click", () => renderNode(choice.next));
+    btn.addEventListener("click", () => {
+      const reply = document.createElement("p");
+      reply.textContent = `\n YOU: ${choice.text}`;
+      text.appendChild(reply);
+      renderNode(choice.next)});
     choices.appendChild(btn);
   });
 }

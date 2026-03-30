@@ -1,6 +1,6 @@
 {
-  "correctSuspect": "All the previous options",
-  "suspects": ["Sabrina Woodworker", "Belly Eilish", "Lara Larsson", "Whitney Dallas", "All the previous options"],
+  "correctSuspect": "All suspects are equally likely",
+  "suspects": ["Sabrina Woodworker", "Belly Eilish", "Lara Larsson", "Whitney Dallas", "All suspects are equally likely"],
   "files": [
     {
       "id": "f1",
@@ -11,14 +11,14 @@
         "author": "t_user",
         "createdAt": "2026-03-16T09:45:00Z",
         "modifiedAt": "2026-03-18T17:11:00Z",
-        "device": "SIGMA-7 Virtual Station 04 / Sandbox",
+        "device": "GLITTER-7 Virtual Station 04 / Sandbox",
         "location": "Test Lab Bay 7",
         "ipAsn": "198.51.100.44 / AS64580"
       },
       "timeline": [
-        { "time": "09:45", "label": "File created on SIGMA-7 Virtual Station 04" },
+        { "time": "09:45", "label": "File created on GLITTER-7 Virtual Station 04" },
         { "time": "11:22", "label": "Template merged from internal wiki /finance-proposals/B2027.dotm" },
-        { "time": "14:18", "label": "Edit sessions from multiple cryptography‑lab users via t_user" },
+        { "time": "14:18", "label": "Edit sessions from one or more cryptography‑lab users via t_user" },
         { "time": "17:11", "label": "Final edit before encrypted transfer" },
         { "time": "17:15", "label": "Last printed attempt to sanitize GPS slide" },
         { "time": "17:22", "label": "Checksum logged in outbound proxy metadata" }
@@ -33,7 +33,7 @@
         "author": "t_user",
         "createdAt": "2026-03-17T14:30:18Z",
         "modifiedAt": "2026-03-18T19:04:33Z",
-        "device": "SIGMA-7 Virtual Station 04 / Sandbox",
+        "device": "-7 Virtual Station 04 / Sandbox",
         "location": "SecureComms Lab",
         "ipAsn": "203.0.113.12 / AS64581"
       },
@@ -54,14 +54,14 @@
         "author": "BEILISH",
         "createdAt": "2026-03-14T08:23:18Z",
         "modifiedAt": "2026-03-18T23:58:33Z",
-        "device": "SIGMA-7 Virtual Station 04 / Sandbox",
+        "device": "GLITTER-7 Virtual Station 04 / Sandbox",
         "location": "Finance Proposal Server",
         "ipAsn": "192.0.2.29 / AS64582"
       },
       "timeline": [
         { "time": "08:23", "label": "Budget proposal drafted by BEILISH" },
         { "time": "12:47", "label": "Shared read‑only to Directorate of Signals" },
-        { "time": "15:18", "label": "Comments added by multiple cryptography‑lab users via t_user" },
+        { "time": "15:18", "label": "Comments added by one or more cryptography‑lab users via t_user" },
         { "time": "23:58", "label": "Final save from t_user sandbox before export" },
         { "time": "23:59", "label": "Copied into leak bundle by unknown process" }
       ]

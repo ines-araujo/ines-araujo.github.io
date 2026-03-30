@@ -27,6 +27,14 @@ body {
   line-height: 1.55;
 }
 
+.main-flow {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  gap: 20px; 
+}
+
 .scanline::before {
   content: "";
   position: fixed;
@@ -117,6 +125,7 @@ body {
 
 .btn,
 button {
+  margin: auto;
   background: var(--btn-bg);
   border: 1px solid var(--btn-border);
   color: var(--text);
@@ -344,8 +353,13 @@ button[disabled] {
 
 .choices {
   margin-top: 1rem;
-  display: grid;
+  display: grid !important;
   gap: 0.6rem;
+  width: 100%;
+}
+
+.choices btn {
+  padding: auto;
 }
 
 .redacted {

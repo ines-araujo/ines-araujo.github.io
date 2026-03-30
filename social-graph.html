@@ -12,8 +12,8 @@
     <div class="layout-with-nav">
       <aside id="investigationNavMount" aria-label="Investigation navigation"></aside>
       <main class="main-flow container-inner">
+      <div>
         <div class="topbar">
-          <a class="btn btn-secondary" href="./docs-metadata.html">Case File 01</a>
           <div class="tag">CASE FILE 02 · COMMUNICATION WEB</div>
         </div>
 
@@ -37,7 +37,7 @@
 
         <section class="panel">
           <h1>Social graph from metadata</h1>
-          <p>You start gathering metadata — not contents — from phone calls, emails, office Wi-Fi logs, social media, and VPN endpoints, in hopes to find incriminating information on the members of the lab. Using this information you build a social graph that you hope will give you insight into what’s going on.</p>
+          <p>You start gathering metadata from phone calls, emails, office Wi-Fi logs, social media, and VPN endpoints, in hopes to find incriminating information on the members of the lab. Using this information you build a social graph that you hope will give you insight into what’s going on.</p>
           <p>
             A <strong>social graph</strong> built from call or message metadata connects people (nodes) when they communicate
             (edges). You rarely see content—only <em>who contacted whom, how often, and when</em>.
@@ -46,22 +46,26 @@
             <h2 class="key-concept-title">What is an “insider” here?</h2>
             <p>
               An <strong>insider</strong> is someone positioned to move sensitive data out of a trusted enclave. In graph terms,
-              look for a node that is both highly connected and sits on many weighted paths—a <strong>hub</strong> or broker—not
-              necessarily the loudest speaker.
+              look for a node that is both highly connected to the nodes of other agency workers, and to suspicious externl actors such as journalists Cady Perry, Michael Johnson or Ma Donna.
             </p>
+          </div>
+          
+          <div class="instruction-box">
+            <h2 class="instruction-title">Real-world parallels</h2>
+            <ul class="instruction-list">
+              <li>
+                The NSA collected vast amounts of phone call metadata—records of who called whom, when, and for how long—from U.S. telecommunications providers 
+                under Section 215 of the Patriot Act, enabling it to build detailed social‑network profiles on millions of ordinary citizens without ever 
+                listening to the actual content of the conversations. <a href="https://www.aclu.org/news/national-security/guide-what-we-now-know-about-nsas-dragnet-searches-your" class="link-accent" target="_blank" rel="noreferrer">See more</a>
+              </li>
+            </ul>
           </div>
           <div class="instruction-box">
             <h2 class="instruction-title">Success criteria</h2>
             <ul class="instruction-list">
-              <li>Compute <strong>weighted degree</strong> (sum of edge weights) per person.</li>
-              <li>Use <strong>Highlight hubs</strong> to compare the strongest connectors.</li>
-              <li>Select the person who best matches the broker pattern, then confirm.</li>
+              <li>Identify the insider by looking at the graph. Who looks suspicious of exfiltrating information from G.L.I.T.T.E.R here?
             </ul>
           </div>
-          <p class="muted small-print">
-            Real-world context: large-scale communication metadata has been central to debates about programs that collect “who
-            talked to whom” at population scale.
-          </p>
           <div id="hintMountGraph"></div>
         </section>
 
@@ -76,15 +80,19 @@
             <button id="highlightHubBtn" type="button" class="btn btn-secondary">Highlight most connected nodes</button>
             <div class="form-row">
               <label class="input-label" for="insiderSelect">Mark insider</label>
-              <select id="insiderSelect" class="input-field"></select>
+              <select id="insiderSelect" class="input-field">
+                <option value="default"></option>
+              </select>
             </div>
             <button id="confirmInsiderBtn" type="button" class="btn btn-primary">Confirm selection</button>
             <p id="graphFeedback" class="status" role="status"></p>
-            <a id="toLocation" class="btn btn-primary btn-disabled" href="./location-analysis.html" aria-disabled="true"
-              >Proceed to location analysis</a
-            >
           </div>
         </section>
+      </div>
+
+      <a id="toLocation" class="btn btn-primary btn-disabled" href="./location-analysis.html" aria-disabled="true"
+      >Proceed to location analysis</a
+    >
       </main>
     </div>
 

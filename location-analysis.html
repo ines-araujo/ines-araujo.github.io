@@ -13,19 +13,19 @@
     <div class="layout-with-nav">
       <aside id="investigationNavMount" aria-label="Investigation navigation"></aside>
       <main class="main-flow container-inner">
+      <div>
         <div class="topbar">
-          <a class="btn btn-secondary" href="./social-graph.html">Case File 02</a>
           <div class="tag">CASE FILE 03 · MOVEMENT PATTERN</div>
         </div>
 
-        <section class="panel signal-intro">
-          <p>Sabrina is now your prime suspect.</p>
-          <p>But there’s a challenge: she’s on a mission, location classified.</p>
-          <p>Official records don’t reveal her address — yet you start digging. You decide to use metadata to track her location</p>
-        </section>
-
         <section class="panel">
           <h1>Location metadata</h1>
+
+
+          <p>Sabrina is now your prime suspect.</p>
+          <p>But there’s a challenge: she’s on a mission, location classified.</p>
+          <p>Official records don’t reveal her address — yet you start digging. You decide once again to use metadata to track her location</p>
+
           <p>
             Phones, fitness apps (for example <strong>Strava</strong>), maps, and wearables record coordinates or cell sectors.
             Even coarse points repeated over time reveal <strong>home</strong> (night repeats), <strong>work</strong> (weekday
@@ -44,10 +44,9 @@
           <div class="instruction-box">
             <h2 class="instruction-title">Your task</h2>
             <ol class="instruction-list">
-              <li>Study clusters on the map (night vs weekday vs outlier).</li>
-              <li>Assign <strong>home</strong> and <strong>work</strong> clusters using timestamps in popups.</li>
-              <li>Pick the <strong>sensitive location</strong> label that sits apart from routine loops.</li>
-              <li>Validate—then the debate unlocks.</li>
+              <li>Study clusters on the map. You may click on any node on the map so see which cluster it belongs to.</li>
+              <li>Assign <strong>home</strong> and <strong>work</strong> clusters by inferring patterns from timestamps and locations of the nodes on the graph.</li>
+              <li>Identify a <strong>sensitive location</strong> that sits as an outlier in the graph, apart from routine loops.</li>
             </ol>
           </div>
           <div id="hintMountLoc"></div>
@@ -62,21 +61,28 @@
             <h3>Inference controls</h3>
             <div class="form-row">
               <label class="input-label" for="homeGuess">Home cluster</label>
-              <select id="homeGuess" class="input-field"></select>
+              <select id="homeGuess" class="input-field">
+                <option value="default"></option>
+              </select>
             </div>
             <div class="form-row">
               <label class="input-label" for="workGuess">Work cluster</label>
-              <select id="workGuess" class="input-field"></select>
+              <select id="workGuess" class="input-field">
+                <option value="default"></option>
+              </select>
             </div>
             <div class="form-row">
               <label class="input-label" for="sensitiveGuess">Sensitive location</label>
-              <select id="sensitiveGuess" class="input-field"></select>
+              <select id="sensitiveGuess" class="input-field">
+                <option value="default"></option>
+              </select>
             </div>
             <button id="validateLocationBtn" type="button" class="btn btn-primary">Validate analysis</button>
             <p id="locationFeedback" class="status" role="status"></p>
-            <a id="toDebate" class="btn btn-primary btn-disabled" href="./debate.html" aria-disabled="true">Proceed to debate</a>
           </div>
         </section>
+      </div>
+      <a id="toDebate" class="btn btn-primary btn-disabled" href="./debate.html" aria-disabled="true">Proceed to debate</a>
       </main>
     </div>
     <script src="./js/state.js"></script>

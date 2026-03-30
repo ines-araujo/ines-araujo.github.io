@@ -39,100 +39,54 @@
       <div class="layout-with-nav">
         <aside id="investigationNavMount" aria-label="Investigation navigation"></aside>
         <main class="main-flow container-inner">
-          <div class="topbar">
-            <div class="tag easter-flicker">CASE FILE 00 · BRIEFING</div>
+          <div>
+            <div class="topbar">
+              <div class="tag easter-flicker">BRIEFING</div>
+            </div>
+
+            <section class="panel signal-intro">
+              <h1 class="hero-title glitch" data-text="THE LEAK">THE LEAK</h1>
+              <a href="https://www.youtube.com/watch?si=-uT2fyVXQztyIF7o&v=kV2HDM86XgI&feature=youtu.be" class="link-no-accent" target="_blank" rel="noreferrer"><p id="typedIntro" class="typed" aria-live="polite"></p></a>
+
+              <div class="pretty-text">
+                <p>This is an educational blog, meant to teach graduate Computer Science students about cyber‑surveillance and inference of private information via metadata analysis through an interactive 
+                  investigation scenario.</p>
+              </div>
+
+              <div class="pretty-text">
+                <h2 class="key-concept-title">Motivation</h2>
+                <p>Since the early 2000s, cyber-espionage has become the weapon of choice for national security organizations worldwide. Intelligence agencies — from the NSA to GCHQ to Switzerland’s own NDB — have conducted large-scale digital surveillance operations, often in the name of national security.</p>  
+                <p>In 2013, the Edward Snowden revelations leaked, exposing the global reach of programs like <a href="https://www.theguardian.com/world/2013/jun/06/us-tech-giants-nsa-data"  class="link-accent" target="_blank" rel="noreferrer">PRISM</a> and <a href="https://www.theguardian.com/world/2013/jul/31/nsa-top-secret-program-online-data"  class="link-accent" target="_blank" rel="noreferrer">XKeyscore</a>: intelligence programs that enabled near-omniscient mass surveillance of emails, browsing habits, and online activity across the globe. This shook public trust in governments’ ability to manage digital personal data responsibly and protect citizen's privacy.</p>
+                <p>Many people assume that encrypting our communications is enough to guarantee privacy. However, as this blog will show, encryption alone often does not provide full privacy protection when using modern communication systems.</p>
+                <p>Government-led surveillance programs frequently rely on the observation of communications metadata — rather than message content — to infer sensitive information about individuals.</p>
+              </div>
+
+              <div class="key-concept" role="region" aria-label="Definition of metadata">
+                <h2 class="key-concept-title">What is metadata?</h2>
+                <p>
+                  <strong>Metadata</strong> is <em>data about data</em>: who created a file, when it was edited, which device or app
+                  produced it, where it was saved, and how it moved between systems (for example IP routes or message headers).
+                </p>
+                <p class="muted key-concept-note">
+                  Even when the <strong>content</strong> is encrypted or redacted, metadata can still describe behavior, relationships,
+                  and routines. That is why it is powerful for investigators—and for anyone building profiles at scale.
+                </p>
+              </div>
+
+              <div class="instruction-box">
+                <p>You will take the role of an agent at the <strong>Global Liaison in Threat Tracking and Espionage Response Agency</strong> of the fictional <strong>Republic of Auralia</strong> (also known as <strong>G.L.I.T.T.E.R.</strong>).</p>
+                <p>Your task in this simulation is to investigate a data breach that threatens to expose classified information on state-led surveillance programs.</p>
+
+                <h2 class="instruction-title">What you will do</h2>
+                <ol class="instruction-list">
+                  <li>Look at <strong>document metadata</strong> (like who created and edited a file) and use them to build a timeline that points to the main suspect.</li>
+                  <li>Study a <strong>network of messages and calls</strong> to find the person who connects and passes information between agents and journalists.</li>
+                  <li>Use <strong>location data</strong> to guess where someone lives, works, and where they stop at a sensitive place.</li>
+                  <li>Take part in a <strong>debate</strong> about security versus privacy.</li>
+                </ol>
+              </div>
+            </section>
           </div>
-
-          <section class="panel signal-intro">
-            <h1 class="hero-title glitch" data-text="THE LEAK">THE LEAK</h1>
-            <a href="https://www.youtube.com/watch?si=-uT2fyVXQztyIF7o&v=kV2HDM86XgI&feature=youtu.be" class="link-no-accent" target="_blank" rel="noreferrer"><p id="typedIntro" class="typed" aria-live="polite"></p></a>
-
-            <div class="pretty-text">
-              <p>This is an educational blog, meant to teach users about cyber‑surveillance and metadata analysis through an interactive investigation scenario. Keep reading to begin the story.</p>
-            </div>
-
-            <div class="instruction-box">
-
-              <p>You will take the role of an agent at the <strong>Global Liaison in Threat Tracking and Espionage Response Agency</strong> of the fictional <strong>Republic of Auralia</strong> (also known as <strong>G.L.I.T.T.E.R.</strong>).</p>
-
-              <p>Your task in this simulation is to investigate a data breach that threatens to expose classified information on state-led surveillance programs.</p>
-
-              <h2 class="instruction-title">What you will do</h2>
-              <ol class="instruction-list">
-                <li>Inspect <strong>document metadata</strong> and build a timeline to name a lead suspect.</li>
-                <li>Explore a <strong>communication graph</strong> to find who brokers information inside a network.</li>
-                <li>Interpret <strong>location points</strong> to infer home, work, and a sensitive stop.</li>
-                <li>Complete a <strong>structured debate</strong> on security versus privacy, then read a short debrief.</li>
-              </ol>
-            </div>
-
-            <div class="pretty-text">
-              <p>Since the early 2000s, cyber-espionage has become the weapon of choice for national security organizations worldwide. Intelligence agencies — from the NSA to GCHQ to Switzerland’s own NDB — have conducted large-scale digital surveillance operations, often in the name of national security.</p>  
-              <p>However, after Edward Snowden’s 2013 revelations exposed the global reach of programs like <a href="https://www.theguardian.com/world/2013/jun/06/us-tech-giants-nsa-data"  class="link-accent" target="_blank" rel="noreferrer">PRISM</a> and <a href="https://www.theguardian.com/world/2013/jul/31/nsa-top-secret-program-online-data"  class="link-accent" target="_blank" rel="noreferrer">XKeyscore</a>, public trust in governments’ ability to manage personal data responsibly and protect citizen's privacy was profoundly shaken.</p>
-            </div>   
-              
-            <div class="key-concept" role="region" aria-label="Definition of metadata">
-              <h2 class="key-concept-title">What Is Privacy?</h2>
-
-              Privacy has many interpretations depending on context, discipline, and purpose. Below are three influential ways to understand it: privacy as control, privacy as practice, and privacy as confidentiality.
-
-              <article id="privacy-control">
-                <h4>Privacy as <strong>Control</strong></h4>
-                <blockquote>
-                  “The claim of individuals, groups, or institutions to determine for themselves when, how, and to what extent information about them is communicated to others.”  
-                  <cite>— Westin (1970)</cite>
-                </blockquote>
-
-
-                <h4>Privacy as <strong>Practice</strong></h4>
-                <blockquote>
-                  “The freedom from unreasonable constraints on the construction of one’s own identity”  
-                  <cite>— Agre (1999)</cite>
-                </blockquote>
-
-
-                <h4>Privacy as <strong>Confidentiality</strong></h4>
-                <blockquote>
-                  “The right to be let alone.”  
-                  <cite>— Warren & Brandeis (1890)</cite>
-                </blockquote>
-            </div>
-
-            <div class="pretty-text">
-              <p>Many people assume that encrypting our communications is enough to guarantee privacy. However, as this blog will show, encryption alone often does not provide full privacy protection when using modern communication systems.</p>
-              <p>Government-led surveillance programs frequently rely on the observation of communications metadata — rather than message content — to infer sensitive information about individuals.</p>
-            </div>
-
-            <div class="key-concept" role="region" aria-label="Definition of metadata">
-              <h2 class="key-concept-title">What is metadata?</h2>
-              <p>
-                <strong>Metadata</strong> is <em>data about data</em>: who created a file, when it was edited, which device or app
-                produced it, where it was saved, and how it moved between systems (for example IP routes or message headers).
-              </p>
-              <p class="muted key-concept-note">
-                Even when the <strong>content</strong> is encrypted or redacted, metadata can still describe behavior, relationships,
-                and routines. That is why it is powerful for investigators—and for anyone building profiles at scale.
-              </p>
-            </div>
-
-          </section>
-
-          <section class="panel">
-            <h2>Learning goals</h2>
-            <ul class="learning-goals">
-              <li>Define privacy and explain its importance in the digital context.</li>
-              <li>Explain what metadata is and distinguish it from the content of a message.</li>
-              <li>Identify ways in which everyday technologies and online services may unintentionally expose personal information.</li>
-              <li>Explain the “privacy versus security” tradeoff, and understand why privacy is now seen as a fundamental security feature driving the development of Privacy Enhancing Technologies (PETs).</li>
-            </ul>
-            <p class="footer-note narrative-continuity">
-              Your briefing continues in <strong>Case File 01</strong> with leaked file metadata—read the concepts there before
-              clicking anything labeled “inspect.”
-            </p>
-            <p class="easter-egg" data-secret="Observers log session heatmaps. Your trail is data too.">
-              <span class="redacted hover-distort">hover: analyst footprint</span>
-            </p>
-          </section>
         </main>
       </div>
     </div>

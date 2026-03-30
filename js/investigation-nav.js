@@ -6,6 +6,7 @@
  * - `bindProceedGuard`: pairs primary “Proceed to …” links with progress flags; blocks early advance.
  */
 const INV_CHAPTERS = [
+  { key: "landing", label: "00 · Introduction", href: "./index.html" },
   { key: "documents", label: "01 · Document metadata", href: "./docs-metadata.html" },
   { key: "graph", label: "02 · Social graph", href: "./social-graph.html" },
   { key: "location", label: "03 · Location", href: "./location-analysis.html" },

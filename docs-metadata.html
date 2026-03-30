@@ -11,90 +11,93 @@
     <div class="layout-with-nav">
       <aside id="investigationNavMount" aria-label="Investigation navigation"></aside>
       <main class="main-flow container-inner">
-        <div class="topbar">
-          <a class="btn btn-secondary" href="./index.html">Briefing</a>
-          <div class="tag">CASE FILE 01 · DOCUMENT TRACE</div>
-        </div>
-
-        <section class="panel signal-intro">
-          <h1>Briefing</h1>
-          <p>
-            <strong>The story begins on a Monday morning.</strong>
-          </p>
-          <p>You, Agent T. Swift, are called into the glass-walled office of Director Fenty. She slides a sealed note across the table:</p>
-          <div class="paper">
-            <p class="muted">
-              TOP SECRET: INTERNAL LEAK DETECTED.
-            </p>
-            <p class="muted">
-              Classified files similar to the Snowden revelations have appeared on a whistleblowing site.
-            </p>
-            <p class="muted">
-              Your mission: identify the source.
-            </p>
+        <div>
+          <div class="topbar">
+            <div class="tag">CASE FILE 01 · DOCUMENT TRACE</div>
           </div>
-          <p>You access an internal drive containing the leaked files.</p>
 
-          <p>They are logs, communication summaries, and reports. Nothing appears particularly incriminating, and you can’t trace a suspect based on the content of the documents alone.</p>
-            
-          <p>So, you decide to look a the documents' metadata.</p>
-        </section>
-
-        <section class="panel">
-          <h1>Document metadata</h1>
-          <p>
-            <strong>Document metadata</strong> is embedded or logged information about a file: author, creation and edit times,
-            software, device identifiers, and sometimes location or network paths. It travels with copies and exports.
-          </p>
-          <p class="muted">
-            Even if the document body is encrypted or you never read the paragraphs, metadata can show <em>who touched the file,
-            when, and from where</em>—enough to anchor a timeline or match a workstation.
-          </p>
-        </section>
-
-        <section class="panel">
-          <h2>Mission</h2>
-          You direct your attention towards three files that seem to have a relation
-          <div class="instruction-box">
-            <ol class="instruction-list">
-              <li>Select each evidence item and choose <strong>Inspect in viewer</strong> to load parsed metadata and the timeline.</li>
-              <li>Compare timestamps across files. Ask: who authored the earliest artifact tied to the outbound transfer?</li>
-              <li>Select the <strong>primary suspect</strong> whose metadata best matches the leak sequence.</li>
-            </ol>
-          </div>
-        </section>
-
-        <section class="panel">
-          <h2>Forensic file viewer</h2>
-          <p class="muted small-print">Synthetic evidence for education. You can select a file and inspect its metadata below.</p>
-          <div id="evidenceList" class="forensic-grid"></div>
-          <div id="hintMountDoc"></div>
-        </section>
-
-        <section class="grid two forensic-split">
-          <div class="panel">
-            <h3>Parsed metadata</h3>
-            <p class="muted small-print">Hover a field name for a short explanation.</p>
-            <ul id="metadataPanel" class="metadata-list"></ul>
-          </div>
-          <div class="panel timeline-panel">
-            <h3>Timeline</h3>
-            <p class="muted small-print timeline-scroll-hint">Scroll to see more events</p>
-            <div class="timeline-scroll">
-              <div id="timeline" class="timeline"></div>
+          <section class="panel signal-intro">
+            <h1>Briefing</h1>
+            <p>
+              <strong>The story begins on a Monday morning.</strong>
+            </p>
+            <p>You, Agent T. Swift, are called into the glass-walled office of Director Fenty. She slides a sealed note across the table:</p>
+            <div class="paper">
+              <p class="muted">
+                TOP SECRET: INTERNAL LEAK DETECTED.
+              </p>
+              <p class="muted">
+                Classified files similar to the Snowden revelations have appeared on a whistleblowing site.
+              </p>
+              <p class="muted">
+                Your mission: identify the source.
+              </p>
             </div>
-          </div>
-        </section>
+            <p>You access an internal drive containing the leaked files.</p>
 
-        <section class="panel">
-          <h2>Named suspects</h2>
-          <p>
-            These individuals are all possible authors of the leak. O
-          </p>
-          <div id="suspectOptions" class="suspect-grid"></div>
-          <p id="documentFeedback" class="status" role="status"></p>
-          <a id="toGraph" class="btn btn-primary btn-disabled" href="./social-graph.html" aria-disabled="true">Proceed to social graph</a>
-        </section>
+            <p>They are logs, communication summaries, and reports. Nothing appears particularly incriminating, and you can’t trace a suspect based on the content of the documents alone.</p>
+              
+            <p>So, you decide to look a the documents' metadata.</p>
+          </section>
+
+          <!--<section class="panel">
+            <h1>Document metadata</h1>
+            <p>
+              <strong>Document metadata</strong> is embedded or logged information about a file: author, creation and edit times,
+              software, device identifiers, and sometimes location or network paths. It travels with copies and exports.
+            </p>
+            <p class="muted">
+              Even if the document body is encrypted or you never read the paragraphs, metadata can show <em>who touched the file,
+              when, and from where</em>—enough to anchor a timeline or match a workstation.
+            </p>
+          </section>-->
+
+          <section class="panel">
+            <h2>Mission</h2>
+            You direct your attention towards three files that seem to have a relation to the sandboxed workstation that the documents were leaked from: Virtual Station 04. 
+            Process logs show that each of the four cryptography‑lab users (Sabrina Woodworker, Belly Eilish, Lara Larsson and Whitney Dallas) ran sessions on that 
+            sandbox around the same window, and the timeline shows overlapping edit events from the same subnet. 
+            <div class="instruction-box">
+              <ol class="instruction-list">
+                <li>Select each evidence item and choose <strong>Inspect in viewer</strong> to load parsed metadata and the timeline.</li>
+                <li>Compare timestamps across files. Ask: who authored the earliest artifact tied to the outbound transfer?</li>
+                <li>Select the <strong>primary suspect</strong> whose metadata best matches the leak sequence.</li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Forensic file viewer</h2>
+            <p class="muted small-print">Synthetic evidence for education. You can select a file and inspect its metadata below.</p>
+            <div id="evidenceList" class="forensic-grid"></div>
+            <div id="hintMountDoc"></div>
+          </section>
+
+          <section class="grid two forensic-split">
+            <div class="panel">
+              <h3>Parsed metadata</h3>
+              <p class="muted small-print">Hover a field name for a short explanation.</p>
+              <ul id="metadataPanel" class="metadata-list"></ul>
+            </div>
+            <div class="panel timeline-panel">
+              <h3>Timeline</h3>
+              <p class="muted small-print timeline-scroll-hint">Scroll to see more events</p>
+              <div class="timeline-scroll">
+                <div id="timeline" class="timeline"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2>Named suspects</h2>
+            <p>
+              These individuals are all possible authors of the leak.
+            </p>
+            <div id="suspectOptions" class="suspect-grid"></div>
+            <p id="documentFeedback" class="status" role="status"></p>
+          </section>
+        </div>
+        <a id="toGraph" class="btn btn-primary btn-disabled next-page-btn" href="./social-graph.html" aria-disabled="true">Proceed to social graph</a>
       </main>
     </div>
     <script src="./js/state.js"></script>

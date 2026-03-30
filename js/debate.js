@@ -53,7 +53,7 @@ const dialogueTree = {
     text: "Even if we assume full visibility, the real actors you care about—sophisticated criminals, state‑backed hackers, network‑coordinated disinformation—often use encrypted channels and operational tradecraft. The metadata you see is mostly of ordinary users, not the hardest targets.",
     choices: [
       { text: "But metadata still helps spot patterns.", next: "patternB" },
-      { text: "Then bulk metadata is mostly hitting the wrong people.", next: "biasB" }
+      { text: "Then bulk metadata collection is mostly hitting the wrong people.", next: "biasB" }
     ]
   },
 

@@ -31,7 +31,7 @@ async function initGraph() {
   guardPage();
   mountHintBlock("hintMountGraph", [
     "Click several nodes and compare weighted degree—the insider should lead the pack.",
-    "Use Highlight hubs to see who the graph centers on; cross-check with your notes from Case File 01.",
+    "Highlight the most connected nodes to see who the graph centers on; cross-check with your notes from Case File 01.",
     "The suspect is the person with the most connected node of the graph"
   ]);
 

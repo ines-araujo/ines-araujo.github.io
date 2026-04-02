@@ -53,6 +53,42 @@ function renderTimeline(events) {
   });
 }
 
+function setViewerFileName(fileName) {
+  const nameNode = document.getElementById("viewerFileName");
+  if (nameNode) {
+    nameNode.textContent = fileName;
+  }
+}
+
+function setModalOpen(isOpen) {
+  const modal = document.getElementById("forensicViewerModal");
+  if (!modal) return;
+  modal.classList.toggle("forensic-modal-open", isOpen);
+  modal.setAttribute("aria-hidden", isOpen ? "false" : "true");
+  document.body.classList.toggle("forensic-modal-active", isOpen);
+}
+
+function wireViewerModal() {
+  const closeBtn = document.getElementById("forensicModalClose");
+  const modal = document.getElementById("forensicViewerModal");
+  if (!modal) return;
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => setModalOpen(false));
+  }
+  modal.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target instanceof HTMLElement && target.dataset.close === "forensic-modal") {
+      setModalOpen(false);
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setModalOpen(false);
+    }
+  });
+}
+
 function renderEvidence(files) {
   const wrap = document.getElementById("evidenceList");
   wrap.innerHTML = "";
@@ -65,11 +101,15 @@ function renderEvidence(files) {
         <span class="forensic-name">${file.fileName}</span>
       </header>
       <p class="forensic-desc">${file.description || ""}</p>
-      <button type="button" class="btn btn-secondary" data-file="${file.id}">Inspect in viewer</button>
+      <button type="button" class="btn btn-secondary" data-file="${file.id}">🔍 Inspect in viewer</button>
     `;
     entry.querySelector("button").addEventListener("click", () => {
+      wrap.querySelectorAll(".forensic-card").forEach((card) => card.classList.remove("forensic-card-active"));
+      entry.classList.add("forensic-card-active");
+      setViewerFileName(file.fileName);
       renderMetadataRows(file.metadata);
       renderTimeline(file.timeline);
+      setModalOpen(true);
     });
     wrap.appendChild(entry);
   });
@@ -121,9 +161,8 @@ async function init() {
 
   const res = await fetch("./data/document-metadata.json");
   const data = await res.json();
+  wireViewerModal();
   renderEvidence(data.files);
-  renderMetadataRows(data.files[0].metadata);
-  renderTimeline(data.files[0].timeline);
   wireSuspectSelection(data.suspects, data.correctSuspect);
 }
 

@@ -63,7 +63,7 @@
 
             <div class="instruction-box">
               <ol class="instruction-list">
-                <li>Select each evidence item and choose <strong>Inspect in viewer</strong> (scroll down to see the viewer) to load parsed metadata and the timeline.</li>
+                <li>Select each evidence item and choose <strong>Inspect in viewer</strong> to load parsed metadata and the timeline.</li>
                 <li>Compare timestamps across files. Ask: who authored the earliest artifact tied to the outbound transfer?</li>
                 <li>Select the <strong>primary suspect</strong> whose metadata best matches the leak sequence.</li>
               </ol>
@@ -77,21 +77,6 @@
             <div id="hintMountDoc"></div>
           </section>
 
-          <section class="grid two forensic-split">
-            <div class="panel">
-              <h3>Parsed metadata</h3>
-              <p class="muted small-print">Hover a field name for a short explanation.</p>
-              <ul id="metadataPanel" class="metadata-list"></ul>
-            </div>
-            <div class="panel timeline-panel">
-              <h3>Timeline</h3>
-              <p class="muted small-print timeline-scroll-hint">Scroll to see more events</p>
-              <div class="timeline-scroll">
-                <div id="timeline" class="timeline"></div>
-              </div>
-            </div>
-          </section>
-
           <section class="panel">
             <h2>Named suspects</h2>
             <p>
@@ -103,6 +88,24 @@
         </div>
         <a id="toGraph" class="btn btn-primary btn-disabled next-page-btn" href="./social-graph.html" aria-disabled="true">Proceed to social graph</a>
       </main>
+    </div>
+    <div id="forensicViewerModal" class="forensic-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Forensic file viewer">
+      <div class="forensic-modal-backdrop" data-close="forensic-modal"></div>
+      <section class="forensic-modal-panel panel">
+        <button id="forensicModalClose" type="button" class="btn btn-secondary forensic-modal-close" aria-label="Close forensic viewer">Close</button>
+        <h2>🔍 Forensic File Viewer</h2>
+        <p class="muted small-print">Selected file: <span id="viewerFileName"></span></p>
+        <h3>Parsed metadata</h3>
+        <p class="muted small-print">Hover a field name for a short explanation.</p>
+        <ul id="metadataPanel" class="metadata-list"></ul>
+        <div class="timeline-panel forensic-viewer-timeline">
+          <h3>Timeline</h3>
+          <p class="muted small-print timeline-scroll-hint">Scroll to see more events</p>
+          <div class="timeline-scroll">
+            <div id="timeline" class="timeline"></div>
+          </div>
+        </div>
+      </section>
     </div>
     <script src="./js/state.js"></script>
     <script src="./js/hints.js"></script>

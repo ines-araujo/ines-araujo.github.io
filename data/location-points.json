@@ -3,7 +3,7 @@
   "answers": {
     "home": "Riverside-Night-Cluster",
     "work": "Civic-Tower-Day-Cluster",
-    "sensitive": "Backstage & Studio Cluster"
+    "sensitive": "Popstar Health Clinic -- Wig department"
   },
   "points": [
     { "lat": 51.5039, "lng": -0.1215, "timestamp": "2026-02-15T22:18:00Z", "type": "night", "cluster": "Riverside-Night-Cluster", "label": "Riverside apartment – evening entry" },
@@ -21,6 +21,7 @@
     { "lat": 51.5174, "lng": -0.1091, "timestamp": "2026-02-18T16:08:00Z", "type": "work", "cluster": "Civic-Tower-Day-Cluster", "label": "Department meeting at ministry partner" },
     { "lat": 51.5102, "lng": -0.1325, "timestamp": "2026-02-12T13:40:00Z", "type": "work", "cluster": "Civic-Tower-Day-Cluster", "label": "Quick coffee between tasks" },
 
+    { "lat": 51.5035, "lng": -0.1420, "timestamp": "2026-02-19T20:45:00Z", "type": "sensitive", "cluster": "Backstage & Studio Cluster", "label": "Popstar Health Clinic -- Wig department" },
     { "lat": 51.5030, "lng": -0.1460, "timestamp": "2026-02-11T19:10:00Z", "type": "sensitive", "cluster": "Backstage & Studio Cluster", "label": "Soho SoundWorks Recording Studio – rehearsal night" },
     { "lat": 51.5008, "lng": -0.1246, "timestamp": "2026-02-18T18:52:00Z", "type": "sensitive", "cluster": "Backstage & Studio Cluster", "label": "Royal Festival Hall backstage entrance – concert prep" },
     { "lat": 51.4978, "lng": -0.1415, "timestamp": "2026-02-10T12:30:00Z", "type": "sensitive", "cluster": "Backstage & Studio Cluster", "label": "Wardrobe studio – costume fitting" },

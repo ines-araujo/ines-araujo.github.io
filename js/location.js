@@ -47,6 +47,35 @@ function scheduleMapResize(map) {
   window.setTimeout(run, 400);
 }
 
+function renderClusterLegend(uniqueClusters, points) {
+  const legend = document.getElementById("clusterLegend");
+  if (!legend) return;
+
+  const clusterItems = uniqueClusters
+    .map((name) => {
+      const clusterType = points.find((p) => p.cluster === name)?.type || "other";
+      const dotColor = colorFor(clusterType);
+      const friendlyType =
+        clusterType === "night"
+          ? "Night / likely home pattern"
+          : clusterType === "work"
+            ? "Weekday daytime / likely work pattern"
+            : clusterType === "sensitive"
+              ? "Sensitive or exceptional stop"
+              : "Other";
+      return `<li><span class="legend-dot" style="background:${dotColor};"></span><strong>${name}</strong> — ${friendlyType}</li>`;
+    })
+    .join("");
+
+  legend.innerHTML = `
+    <h4>Cluster legend (K-means)</h4>
+    <ul class="cluster-legend-list">
+      ${clusterItems}
+      <li><span class="legend-ring"></span>Dashed circle = approximate cluster area</li>
+    </ul>
+  `;
+}
+
 async function initLocation() {
   if (!guardPage()) {
     return;
@@ -138,6 +167,7 @@ async function initLocation() {
   });
 
   const uniqueClusters = [...new Set(data.points.map((p) => clusterName(p)))].filter((c) => c !== "Transit-Noise");
+  renderClusterLegend(uniqueClusters, data.points);
   const sensitiveOptions = [...new Set(data.points.filter((p) => p.type === "sensitive").map((p) => p.label))];
   const homeGuess = document.getElementById("homeGuess");
   const workGuess = document.getElementById("workGuess");

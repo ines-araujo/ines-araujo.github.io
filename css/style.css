@@ -733,6 +733,11 @@ body.gate-exit .access-gate {
   background: rgba(6, 10, 16, 0.85);
 }
 
+.forensic-card-active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(111, 255, 209, 0.25);
+}
+
 .forensic-card-head {
   display: flex;
   align-items: center;
@@ -809,6 +814,49 @@ body.gate-exit .access-gate {
   margin: 0.5rem 0 0;
 }
 
+.cluster-legend {
+  margin-top: 0.7rem;
+  border: 1px solid #3a556d;
+  border-radius: 8px;
+  background: rgba(8, 14, 22, 0.75);
+  padding: 0.65rem 0.75rem;
+}
+
+.cluster-legend h4 {
+  margin: 0 0 0.45rem;
+  color: var(--amber);
+  font-size: 0.82rem;
+}
+
+.cluster-legend-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.8rem;
+}
+
+.cluster-legend-list li {
+  margin-bottom: 0.3rem;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.legend-ring {
+  display: inline-block;
+  width: 16px;
+  height: 10px;
+  border: 2px dashed #455a64;
+  border-radius: 20px;
+  margin-right: 0.35rem;
+  vertical-align: middle;
+}
+
 .speaker-tag {
   margin-bottom: 0.6rem;
 }
@@ -876,4 +924,44 @@ body.gate-exit .access-gate {
   border-width: 1.5px;
   border-style: solid;
   padding: 20px;
+}
+
+.forensic-viewer-timeline {
+  margin-top: 0.65rem;
+}
+
+.forensic-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 1200;
+}
+
+.forensic-modal-open {
+  display: block;
+}
+
+.forensic-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 4, 8, 0.7);
+}
+
+.forensic-modal-panel {
+  position: relative;
+  width: min(860px, 92vw);
+  max-height: 88vh;
+  margin: 4vh auto;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.forensic-modal-close {
+  position: sticky;
+  top: 0;
+  float: right;
+}
+
+body.forensic-modal-active {
+  overflow: hidden;
 }

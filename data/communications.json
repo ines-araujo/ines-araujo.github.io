@@ -1,7 +1,7 @@
 {
-  "correctInsider": "Sabrina Woodworker",
+  "correctInsider": "Riley Cyrus",
   "nodes": [
-    { "id": "Sabrina Woodworker" },
+    { "id": "Riley Cyrus" },
     { "id": "Belly Eilish" },
     { "id": "Lara Larsson" },
     { "id": "Whitney Dallas" },
@@ -10,12 +10,12 @@
     { "id": "Cady Perry" }
   ],
   "links": [
-    { "source": "Sabrina Woodworker", "target": "Belly Eilish", "weight": 5 },
-    { "source": "Sabrina Woodworker", "target": "Lara Larsson", "weight": 6 },
-    { "source": "Sabrina Woodworker", "target": "Whitney Dallas", "weight": 5 },
-    { "source": "Sabrina Woodworker", "target": "Ma Donna", "weight": 8 },
-    { "source": "Sabrina Woodworker", "target": "Michael Johnson", "weight": 7 },
-    { "source": "Sabrina Woodworker", "target": "Cady Perry", "weight": 6 },
+    { "source": "Riley Cyrus", "target": "Belly Eilish", "weight": 5 },
+    { "source": "Riley Cyrusr", "target": "Lara Larsson", "weight": 6 },
+    { "source": "Riley Cyrus", "target": "Whitney Dallas", "weight": 5 },
+    { "source": "Riley Cyrus", "target": "Ma Donna", "weight": 8 },
+    { "source": "Riley Cyrus", "target": "Michael Johnson", "weight": 7 },
+    { "source": "Riley Cyrus", "target": "Cady Perry", "weight": 6 },
     { "source": "Belly Eilish", "target": "Lara Larsson", "weight": 3 },
     { "source": "Lara Larsson", "target": "Whitney Dallas", "weight": 2 },
     { "source": "Ma Donna", "target": "Michael Johnson", "weight": 4 },

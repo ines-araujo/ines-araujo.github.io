@@ -1,6 +1,6 @@
 {
   "correctSuspect": "All suspects are equally likely",
-  "suspects": ["Sabrina Woodworker", "Belly Eilish", "Lara Larsson", "Whitney Dallas", "All suspects are equally likely"],
+  "suspects": ["Riley Cyrus", "Belly Eilish", "Lara Larsson", "Whitney Dallas", "All suspects are equally likely"],
   "files": [
     {
       "id": "f1",
@@ -38,7 +38,7 @@
         "ipAsn": "203.0.113.12 / AS64581"
       },
       "timeline": [
-        { "time": "14:30", "label": "Initial VPN audit created by Sabrina Croft" },
+        { "time": "14:30", "label": "Initial VPN audit created by Riley Cyrus" },
         { "time": "16:45", "label": "Shared read‑only to SecureComms team" },
         { "time": "19:04", "label": "Final modifications from t_user sandbox" },
         { "time": "19:15", "label": "Version stamped by document management system" },

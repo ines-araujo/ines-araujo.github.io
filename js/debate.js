@@ -7,58 +7,57 @@ function guardPage() {
 const dialogueTree = {
 
   start: {
-    speaker: "SABRINA",
-    text: "You traced me using document trails, call graphs, and GPS points—classic metadata. That is the same class of information agencies long framed as ‘harmless’ compared to message content. Do we still believe that?",
+    speaker: "RILEY",
+    text: "You traced me and discovered my secret identity using document trails, call graphs, and GPS points—classic metadata. That is the same class of information intelligence services argued was harmless compared to content. Was it?",
     choices: [
       { text: "Surveillance tools are essential for national security.", next: "securityA" },
-      { text: "Metadata can be as invasive as reading messages.", next: "privacyA" },
+      { text: "Indeed, metadata can be as invasive as reading messages.", next: "privacyA" },
       { text: "It depends on who controls the data.", next: "governanceA" }
     ]
   },
 
   // --- Slide 1: Privacy vs. Security ---
   securityA: {
-    speaker: "SABRINA",
-    text: "You say surveillance is the price of security. But surveillance is not security itself—it’s a tool that reshapes how we see risk and who we trust.",
+    speaker: "RILEY",
+    text: "You say surveillance is the price we have to pay for security. But surveillance is not security itself. It’s just another tool, one that reshapes how we see risk and who we trust.",
     choices: [
-      { text: "Security can’t exist without full visibility.", next: "securityB" },
-      { text: "Maybe privacy and security aren’t opposites.", next: "privacyB" },
-      { text: "We need better limits on what’s visible.", next: "governanceB" }
+      { text: "Security can’t exist if agencies don't have full visibility.", next: "securityB" },
+      { text: "So, you're saying privacy and security aren’t opposites?", next: "privacyB" },
+      { text: "We just need better legal limits on what agencies should be able to see.", next: "governanceB" }
     ]
   },
 
   privacyA: {
-    speaker: "SABRINA",
-    text: "Exactly. Metadata reveals patterns of life: who you meet, when you move, and what you do. With that, you can reconstruct relationships and routines without ever reading a message.",
+    speaker: "RILEY",
+    text: "Exactly! Metadata reveals patterns of life: who you meet, when you move, and what you do. With that, you can reconstruct relationships and routines without ever reading a message.",
     choices: [
-      { text: "So is all metadata inherently dangerous?", next: "overreachB" },
-      { text: "Maybe targeted metadata is acceptable.", next: "governanceB" },
-      { text: "Then privacy is a security property, not a tradeoff.", next: "securityC" }
+      { text: "Maybe putting legal limits on the data security agencies can use would fix that.", next: "governanceB" },
+      { text: "Then. maybe privacy is a security property, not a tradeoff. How can we protect our citizens if anyone can find out their sensitive information based on public metadata?", next: "securityC" }
     ]
   },
 
   governanceA: {
-    speaker: "SABRINA",
+    speaker: "RILEY",
     text: "You’re right to focus on control. The critical question isn’t just what data we collect, but who writes the rules, who reviews the queries, and who audits the results.",
     choices: [
       { text: "Strong legal frameworks can contain abuse.", next: "governanceB" },
-      { text: "Technically enforced limits beat legal promises.", next: "privacyC" },
-      { text: "Even with rules, institutions expand their reach.", next: "overreachB" }
+      // { text: "Technically enforced limits are actually better than legal promises.", next: "privacyC" },
+      { text: "Even with rules in place, institutions will try to expand their reach.", next: "overreachB" }
     ]
   },
 
   // --- Slide 2: Surveillance Is Not Always Effective ---
   securityB: {
-    speaker: "SABRINA",
+    speaker: "RILEY",
     text: "Even if we assume full visibility, the real actors you care about—sophisticated criminals, state‑backed hackers, network‑coordinated disinformation—often use encrypted channels and operational tradecraft. The metadata you see is mostly of ordinary users, not the hardest targets.",
     choices: [
       { text: "But metadata still helps spot patterns.", next: "patternB" },
-      { text: "Then bulk metadata collection is mostly hitting the wrong people.", next: "biasB" }
+      { text: "So bulk metadata collection is mostly hitting the wrong people.", next: "biasB" }
     ]
   },
 
   patternB: {
-    speaker: "SABRINA",
+    speaker: "RILEY",
     text: "Those patterns are noisy. False positives, misinterpreted links, and ‘guilt by association’ mean that most investigative energy is spent on innocent people, not the real threats.",
     choices: [
       { text: "Still, some signals are genuinely useful.", next: "governanceC" },
@@ -67,8 +66,8 @@ const dialogueTree = {
   },
 
   biasB: {
-    speaker: "SABRINA",
-    text: "Precisely. Mass metadata collection often gives the illusion of coverage while disproportionately impacting users who lack encryption, anonymity tools, or technical literacy. The ‘easy’ targets bear the cost of the tradeoff.",
+    speaker: "RILEY",
+    text: "Precisely. Mass metadata collection often gives the illusion of coverage while disproportionately impacting users who lack proper encryption, anonymity tools, or technical literacy. The ‘easy’ targets bear the cost of the tradeoff.",
     choices: [
       { text: "Then we must minimize data collection.", next: "privacyC" },
       { text: "Maybe we focus only on high‑risk individuals.", next: "governanceC" }
@@ -77,7 +76,7 @@ const dialogueTree = {
 
   // --- Slide 3: Surveillance Can Be Abused ---
   governanceB: {
-    speaker: "SABRINA",
+    speaker: "RILEY",
     text: "Laws and oversight help, but history shows that once surveillance infrastructure exists, it expands: scope creep, new uses, and cross‑agency sharing. The metadata you benignly call ‘records’ becomes a permanent social map.",
     choices: [
       { text: "So abuse is inevitable if the system exists.", next: "abuseD" },
@@ -86,17 +85,17 @@ const dialogueTree = {
   },
 
   abuseD: {
-    speaker: "SABRINA",
-    text: "We see this in the NSA’s bulk phone‑metadata program under Section 215, and in reports of Spanish authorities using broad surveillance powers against Catalan independence leaders. The infrastructure moves beyond its original justification, and the affected communities are rarely the ones who consented.",
+    speaker: "RILEY",
+    text: "We see this in the NSA’s bulk phone‑metadata program under Section 215, and in reports of Spanish authorities using broad surveillance powers against Catalan independence leaders. The infrastructure moves beyond its original justification, and the affected communities are rarely the ones who consented to the collection of all this data.",
     choices: [
       { text: "Still, some capabilities are legally constrained.", next: "governanceC" },
-      { text: "Then the risk isn’t just error—it’s normalization of overreach.", next: "privacyC" }
+      { text: "Then the risk isn’t just error—it’s normalising overreach.", next: "privacyC" }
     ]
   },
 
   // --- Slide 4: Surveillance Tools Can Be Subverted ---
   securityC: {
-    speaker: "SABRINA",
+    speaker: "RILEY",
     text: "Even ‘lawful’ systems can be hijacked. In Greece, attackers abused lawful‑interception modules on Vodafone’s switches to wiretap over 100 state officials—including the Prime Minister—for months. The backdoors meant for state agencies became attack surfaces for criminals and insiders.",
     choices: [
       { text: "That’s a failure of implementation, not design.", next: "securityD" },
@@ -105,27 +104,27 @@ const dialogueTree = {
   },
 
   securityD: {
-    speaker: "SABRINA",
+    speaker: "RILEY",
     text: "Even if each case is ‘one‑off’, the pattern is clear: every interception‑ready architecture increases the risk that legitimate access mechanisms will be exploited beyond their intent. Convenience for law‑enforcement can become a vulnerability for everyone.",
     choices: [
       { text: "We must still have some access mechanisms.", next: "governanceC" },
-      { text: "Then default encryption is safer than default backdoors.", next: "privacyC" }
+      { text: "Then privacy-by-design is safer than default backdoors.", next: "privacyC" }
     ]
   },
 
   // --- Slide 5: Privacy Is Security ---
   privacyB: {
-    speaker: "SABRINA",
+    speaker: "RILEY",
     text: "You’re close. The stronger framing is that privacy *is* a security property. It protects individuals from profiling and manipulation, companies from theft of IP, and governments from exposure of sources and operations.",
     choices: [
       { text: "But total privacy hinders legitimate investigations.", next: "governanceC" },
-      { text: "Then strong encryption and minimal data collection are security features.", next: "privacyC" }
+      { text: "Then strong privacy-by-design and minimal data collection are security features.", next: "privacyC" }
     ]
   },
 
   privacyC: {
-    speaker: "SABRINA",
-    text: "Yes. Privacy‑by‑design and security‑by‑design treat confidentiality and control as core goals, not luxuries. Encryption, minimization, and strong access controls make systems more resilient—against criminals, insiders, and state overreach at once. The default security posture shouldn’t be: ‘we see everything and hope for the best.’",
+    speaker: "RILEY",
+    text: "Yes. That's why we should focus on privacy‑by‑design and security‑by‑design, and treat confidentiality and control as core goals. Encryption, data minimization, and strong access controls make systems more resilient—against criminals, insiders, and state overreach at once. The default security posture shouldn’t be: ‘we see everything and hope for the best.’",
     choices: [
       { text: "So metadata‑heavy investigations like mine are risky.", next: "reflectA" },
       { text: "Then we need privacy‑preserving analytics tools.", next: "reflectB" }
@@ -134,25 +133,25 @@ const dialogueTree = {
 
   // --- Slide 6: The Tradeoff Is a Myth ---
   governanceC: {
-    speaker: "SABRINA",
+    speaker: "RILEY",
     text: "That’s the common response: ‘design rules, add oversight, and audit everything.’ But once collection is cheap and capabilities are baked in, the temptation is always to extend the scope—‘one more hop,’ ‘one more pattern.’ The tradeoff myth endures because it’s convenient for institutions, not because it’s accurate.",
     choices: [
       { text: "So we must reject the ‘tradeoff’ framing.", next: "privacyC" },
-      { text: "Then at least we should constrain metadata use.", next: "reflectA" }
+      { text: "Then we should at least constrain metadata use.", next: "reflectA" }
     ]
   },
 
   overreachB: {
-    speaker: "SABRINA",
+    speaker: "RILEY",
     text: "Then why keep building systems that prioritize omniscience over restraint? The Greek wiretapping case, the NSA bulk‑metadata program, and reports of surveillance used against activists show that the infrastructure inevitably leaks beyond its ‘legitimate’ boundaries.",
     choices: [
-      { text: "We must dismantle the tools.", next: "overreachC" },
-      { text: "We must redesign them to resist abuse.", next: "privacyC" }
+      { text: "We must dismantle our tools!", next: "overreachC" },
+      { text: "We must redesign our tools to resist abuse.", next: "privacyC" }
     ]
   },
 
   overreachC: {
-    speaker: "SABRINA",
+    speaker: "RILEY",
     text: "In practice, dismantling rarely happens. So the more realistic path is to constrain collection, shorten retention, enforce strong encryption, and require independent, technical review of any metadata‑heavy investigation. The question becomes: do we want security built on surveillance—or on resilience?",
     choices: [{ text: "Continue", next: "reflectA" }]
   },
@@ -160,10 +159,10 @@ const dialogueTree = {
   // --- Final reflection branches (Slide 6) ---
   reflectA: {
     speaker: "DISCUSSION",
-    text: "Given what metadata revealed here, was the analyst’s pursuit justified—even if it reproduced some mass‑surveillance dynamics at a smaller scale?",
+    text: "Given what metadata revealed here, was the analyst’s methods justified—even if they reproduced some mass‑surveillance dynamics at a smaller scale?",
     choices: [
-      { text: "Yes—targeted metadata can be proportionate in a concrete leak case.", next: "endA" },
-      { text: "No—relying on metadata habits risks normalizing surveillance.", next: "endB" },
+      { text: "Yes—targeted metadata collection can be appropriate in a concrete leak case.", next: "endA" },
+      { text: "No—relying on metadata so freely for investigations risks normalizing surveillance.", next: "endB" },
       { text: "Only with strict minimization, short retention, and independent review.", next: "endC" }
     ]
   },
@@ -198,7 +197,7 @@ const dialogueTree = {
 
   endD: {
     speaker: "HANDLER",
-    text: "Stance logged: you lean into privacy‑preserving analytics and differential privacy. This is the research frontier: balancing utility for analysts with protection for individuals. Ask who benefits most when these tools stay in labs, not in practice.",
+    text: "Stance logged: you lean into privacy‑preserving analytics and differential privacy. This is the research frontier: balancing utility for analysts with protection for individuals. Ask: who benefits most when these tools stay in labs, not in practice?",
     choices: [{ text: "Decide the suspect’s fate", next: "finalChoice" }]
   },
 
